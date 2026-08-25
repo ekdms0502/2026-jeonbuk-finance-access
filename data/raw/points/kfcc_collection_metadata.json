@@ -1,0 +1,93 @@
+{
+  "source": "https://www.kfcc.co.kr/map/list.do",
+  "collection_date": "2026-08-11",
+  "regions": [
+    {
+      "sigungu": "전주시",
+      "endElement": 50,
+      "parsed_rows": 50,
+      "matched": true
+    },
+    {
+      "sigungu": "군산시",
+      "endElement": 13,
+      "parsed_rows": 13,
+      "matched": true
+    },
+    {
+      "sigungu": "익산시",
+      "endElement": 17,
+      "parsed_rows": 17,
+      "matched": true
+    },
+    {
+      "sigungu": "정읍시",
+      "endElement": 12,
+      "parsed_rows": 12,
+      "matched": true
+    },
+    {
+      "sigungu": "남원시",
+      "endElement": 14,
+      "parsed_rows": 14,
+      "matched": true
+    },
+    {
+      "sigungu": "김제시",
+      "endElement": 7,
+      "parsed_rows": 7,
+      "matched": true
+    },
+    {
+      "sigungu": "완주군",
+      "endElement": 5,
+      "parsed_rows": 5,
+      "matched": true
+    },
+    {
+      "sigungu": "진안군",
+      "endElement": 3,
+      "parsed_rows": 3,
+      "matched": true
+    },
+    {
+      "sigungu": "무주군",
+      "endElement": 3,
+      "parsed_rows": 3,
+      "matched": true
+    },
+    {
+      "sigungu": "장수군",
+      "endElement": 3,
+      "parsed_rows": 3,
+      "matched": true
+    },
+    {
+      "sigungu": "임실군",
+      "endElement": 4,
+      "parsed_rows": 4,
+      "matched": true
+    },
+    {
+      "sigungu": "순창군",
+      "endElement": 2,
+      "parsed_rows": 2,
+      "matched": true
+    },
+    {
+      "sigungu": "고창군",
+      "endElement": 3,
+      "parsed_rows": 3,
+      "matched": true
+    },
+    {
+      "sigungu": "부안군",
+      "endElement": 5,
+      "parsed_rows": 5,
+      "matched": true
+    }
+  ],
+  "source_rows": 141,
+  "unique_name_address_rows": 141,
+  "all_endElement_matches": true
+}
