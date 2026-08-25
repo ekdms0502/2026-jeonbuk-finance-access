@@ -1,0 +1,21 @@
+﻿coord_cluster_5m,cluster_lat,cluster_lon,outlet_count,type_count,types,outlet_ids,outlet_names,definition
+CL5-0001,35.7331269,127.1195534,1,1,우체국,JB-0004CFAB2E52,완주구이우체국,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0002,35.9225089,127.1237091,1,1,신협,JB-002062F71483,삼례신용협동조합 지점,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0003,35.8300864,127.1687231,1,1,신협,JB-004E8AC79549,노송신용협동조합 지점,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0004,35.8280767,127.1223212,1,1,새마을금고,JB-0067FECE4FF6,서전주 (본점) 새마을금고,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0005,35.8043667,127.1484383,1,1,우체국,JB-00769D29DE57,전주서학동우체국,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0006,35.9589207,126.7046849,1,1,우체국,JB-00CB6747D0D8,군산지곡동우체국,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0007,35.8367506,127.102937,1,1,우체국,JB-0195A3FECD0D,전주효자4동우체국,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0008,35.8349439,127.0979735,1,1,신협,JB-01DBDC50B60B,전주동부신용협동조합 지점,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0009,36.0590363,127.0846182,1,1,우체국,JB-025693CEBC10,익산여산우체국,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0010,35.834214,127.1198111,1,1,은행,JB-0283AEEAF9CA,SC제일은행 전주,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0011,35.8360572,127.0582017,1,1,은행,JB-0297B31A219A,우리은행 전북혁신도시(출),connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0012,35.8308002,127.1150152,1,1,우체국,JB-02B4240330D2,전주서신동우체국,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0013,35.4591774,126.5409123,1,1,새마을금고,JB-030A736227D0,고창 (해리) 새마을금고,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0014,35.7929664,127.1323167,1,1,새마을금고,JB-037D330C8C7B,남부 (평화중앙) 새마을금고,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0015,35.6289561,127.332214,1,1,우체국,JB-039558304579,임실성수우체국,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0016,35.9582717,126.795844,1,1,새마을금고,JB-0430706C8B03,동군산 (발산) 새마을금고,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0017,35.9897422,126.7871552,1,1,우체국,JB-045C4746C34E,군산성산우체국,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0018,35.9611847,126.5605374,1,1,은행,JB-049275EB4450,IBK기업은행 새만금,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0019,35.8089462,127.0942117,1,1,신협,JB-054AC160E892,전북치과의사신용협동조합 본점,connected by <=5m coordinate links; not a deduplication or verified building
+CL5-0020,36.0921083,127.2789029,1,1,우체국,JB-057108BDABE4,완주운주우체국,connected by <=5m coordinate links; not a deduplication or verified building

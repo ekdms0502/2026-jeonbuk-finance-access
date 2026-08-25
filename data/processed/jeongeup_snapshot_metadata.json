@@ -1,0 +1,9 @@
+{
+  "generated_date": "2026-08-11",
+  "dong_count": 23,
+  "post_office_count": 19,
+  "outlet_scope": "all finance_open=Y outlet types for nearest distance",
+  "straight_distance_model": "largest polygon interior representative point",
+  "road_distance_source": "access_road.csv",
+  "population_exposure_valid": false
+}

@@ -1,0 +1,25 @@
+{
+  "source_page": "https://www.data.go.kr/data/15131430/fileData.do",
+  "download_url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003109249&fileDetailSn=1&insertDataPrcus=N",
+  "provider": "전북특별자치도",
+  "source_data_base_date": "2024-12-31",
+  "collected_date": "2026-08-12",
+  "source_sha256": "fbc92f660caa9995af4a319bee57356fdd1661c00529e3d01e331af76aed7e09",
+  "source_columns": [
+    "시군명",
+    "경로당명",
+    "주소"
+  ],
+  "source_contains_phone": false,
+  "source_rows": 6880,
+  "source_sigungu_count": 14,
+  "geocoded_rows": 6856,
+  "failed_rows": 24,
+  "source_sigungu_match_counts": {
+    "Y": 6854,
+    "N": 2
+  },
+  "coordinate_source": "exact-address public coordinate reuse or Kakao Local, then SGIS boundary audit",
+  "license": "공공데이터포털 이용허락범위 제한 없음",
+  "operational_guard": "listed senior center is a candidate only; use approval and time window are unverified"
+}

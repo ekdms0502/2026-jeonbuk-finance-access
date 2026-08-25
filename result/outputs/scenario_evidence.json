@@ -1,0 +1,318 @@
+{
+  "analysis_version": 1,
+  "analysis_date": "2026-08-12",
+  "input_hashes": {
+    "access_road_sha256": "2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b",
+    "outlets_validated_sha256": "04fc53933a80bce09e0d74b4d42d2a1f7cd8b3c7c2122f02e3c34d429a92bca4",
+    "jeonbuk_route_scenario_sha256": "787176de255fa7dfaab7bbdcd1fc05436b6b1d42311b98c8d0a4fdf6468e0ceb",
+    "scenario_config_sha256": "9269d93112e04a722e8e6b5ab4c05b34b528529cf047cb939f636712d6e838b1"
+  },
+  "scope": {
+    "analysis_admin_count": 243,
+    "analysis_service_zone_count": 14,
+    "route_eligible_admin_target_count": 69
+  },
+  "metric_contract": {
+    "optimized_count_meaning": "visited administrative representative-point targets",
+    "resident_coverage_available": false,
+    "resident_coverage_reason": "resident-level or 100m/500m age-grid origins are not available in the committed evidence",
+    "population_exposure_valid": false,
+    "candidate_location_optimization_performed": false,
+    "candidate_contract": "one nearest same-admin senior-center proxy per eligible admin target"
+  },
+  "default_scenario": {
+    "status": "demonstration_not_operational",
+    "operational_ready": false,
+    "visited_admin_target_count": 57,
+    "eligible_admin_target_count": 69,
+    "visit_count_by_tier": {
+      "P1": 26,
+      "P2": 31
+    },
+    "route_days_used": 15,
+    "travel_km": 1055.555,
+    "wait_minutes": 0.0
+  },
+  "threshold_sensitivity": [
+    {
+      "road_km_gt": 2.0,
+      "all_admin_representative_points": 116,
+      "primary_quality_admin_representative_points": 113
+    },
+    {
+      "road_km_gt": 2.5,
+      "all_admin_representative_points": 94,
+      "primary_quality_admin_representative_points": 91
+    },
+    {
+      "road_km_gt": 3.0,
+      "all_admin_representative_points": 71,
+      "primary_quality_admin_representative_points": 69
+    },
+    {
+      "road_km_gt": 3.5,
+      "all_admin_representative_points": 56,
+      "primary_quality_admin_representative_points": 54
+    },
+    {
+      "road_km_gt": 4.0,
+      "all_admin_representative_points": 43,
+      "primary_quality_admin_representative_points": 41
+    },
+    {
+      "road_km_gt": 5.0,
+      "all_admin_representative_points": 27,
+      "primary_quality_admin_representative_points": 26
+    },
+    {
+      "road_km_gt": 6.0,
+      "all_admin_representative_points": 21,
+      "primary_quality_admin_representative_points": 20
+    }
+  ],
+  "stop_cap_sensitivity": [
+    {
+      "max_stops_per_route": 1,
+      "visited_admin_target_count": 15,
+      "visit_count_by_tier": {
+        "P1": 14,
+        "P2": 1
+      },
+      "route_days_used": 15,
+      "travel_km": 318.695,
+      "max_route_elapsed_minutes": 112.212
+    },
+    {
+      "max_stops_per_route": 2,
+      "visited_admin_target_count": 30,
+      "visit_count_by_tier": {
+        "P1": 24,
+        "P2": 6
+      },
+      "route_days_used": 15,
+      "travel_km": 646.618,
+      "max_route_elapsed_minutes": 211.972
+    },
+    {
+      "max_stops_per_route": 3,
+      "visited_admin_target_count": 45,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 19
+      },
+      "route_days_used": 15,
+      "travel_km": 899.063,
+      "max_route_elapsed_minutes": 264.795
+    },
+    {
+      "max_stops_per_route": 4,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 314.326
+    },
+    {
+      "max_stops_per_route": 5,
+      "visited_admin_target_count": 63,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 37
+      },
+      "route_days_used": 15,
+      "travel_km": 1130.948,
+      "max_route_elapsed_minutes": 395.721
+    },
+    {
+      "max_stops_per_route": 6,
+      "visited_admin_target_count": 68,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 42
+      },
+      "route_days_used": 15,
+      "travel_km": 1205.598,
+      "max_route_elapsed_minutes": 433.263
+    },
+    {
+      "max_stops_per_route": 7,
+      "visited_admin_target_count": 68,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 42
+      },
+      "route_days_used": 15,
+      "travel_km": 1205.598,
+      "max_route_elapsed_minutes": 433.263
+    }
+  ],
+  "speed_service_sensitivity": [
+    {
+      "uniform_speed_kmh": 30.0,
+      "service_minutes": 30,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 299.101
+    },
+    {
+      "uniform_speed_kmh": 30.0,
+      "service_minutes": 45,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 359.101
+    },
+    {
+      "uniform_speed_kmh": 30.0,
+      "service_minutes": 60,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 419.101
+    },
+    {
+      "uniform_speed_kmh": 40.0,
+      "service_minutes": 30,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 254.326
+    },
+    {
+      "uniform_speed_kmh": 40.0,
+      "service_minutes": 45,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 314.326
+    },
+    {
+      "uniform_speed_kmh": 40.0,
+      "service_minutes": 60,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 374.326
+    },
+    {
+      "uniform_speed_kmh": 50.0,
+      "service_minutes": 30,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 227.461
+    },
+    {
+      "uniform_speed_kmh": 50.0,
+      "service_minutes": 45,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 287.461
+    },
+    {
+      "uniform_speed_kmh": 50.0,
+      "service_minutes": 60,
+      "visited_admin_target_count": 57,
+      "visit_count_by_tier": {
+        "P1": 26,
+        "P2": 31
+      },
+      "route_days_used": 15,
+      "travel_km": 1055.555,
+      "max_route_elapsed_minutes": 347.461
+    }
+  ],
+  "outlet_status_sensitivity": {
+    "eligible_outlet_status_counts": {
+      "open_reported": 204,
+      "listed_assumed_open": 439
+    },
+    "road_nearest_status_counts_all_243": {
+      "listed_assumed_open": 108,
+      "open_reported": 135
+    },
+    "road_nearest_status_counts_route_targets": {
+      "listed_assumed_open": 23,
+      "open_reported": 46
+    },
+    "straight_line_all_eligible_statuses": {
+      "admin_representative_points_gt_3km": 30,
+      "admin_representative_points_gt_5km": 7
+    },
+    "straight_line_open_reported_only": {
+      "admin_representative_points_gt_3km": 36,
+      "admin_representative_points_gt_5km": 7
+    },
+    "road_distance_open_reported_only_available": false
+  },
+  "candidate_proxy_audit": {
+    "candidate_count": 69,
+    "unique_candidate_count": 69,
+    "every_candidate_serves_exactly_one_target": true,
+    "selection_distance_km": {
+      "min": 0.051,
+      "median": 0.496,
+      "p90": 1.256,
+      "max": 3.109
+    },
+    "longest_selection": {
+      "candidate_id": "JSC-F0BB93AFEBA7",
+      "candidate_name": "야미도경로당",
+      "target_id": "5213039000",
+      "distance_km": 3.10918
+    }
+  },
+  "route_duration_audit": {
+    "operating_horizon_minutes": 480,
+    "elapsed_minutes": {
+      "min": 228.02,
+      "median": 284.991,
+      "p90": 304.039,
+      "max": 314.326
+    },
+    "all_routes_within_horizon": true
+  },
+  "operational_gates": [
+    "confirm actual depots and inter-municipality repositioning",
+    "confirm venue permission, vehicle access, weekdays, and time windows",
+    "calibrate travel time with observed traffic or field runs",
+    "add resident-level or 100m/500m age-grid origins before claiming resident coverage"
+  ]
+}
