@@ -16,7 +16,7 @@ test_returns_none_when_no_candidate_passes_every_gate (test_typology.TypologySel
 test_selects_highest_silhouette_without_forcing_three_clusters (test_typology.TypologySelectionTests.test_selects_highest_silhouette_without_forcing_three_clusters) ... ok
 
 ----------------------------------------------------------------------
-Ran 13 tests in 0.003s
+Ran 13 tests in 0.002s
 
 OK
   OK  경로 엔진 테스트
@@ -29,19 +29,19 @@ selected k=2; silhouette=0.686; stability median/p10=1.000/0.753
 → data/processed/scenario_evidence.json, reports/scenario_evidence.md
 전북 대시보드 데이터: 243개 행정동·643개 분석가용 접점·69개 경로대상
 → docs/demo-jeonbuk/data.js
-✔ dashboard bundle covers all Jeonbuk admins and service zones (2.123334ms)
-✔ map bundle contains real boundaries, roads, and directed route geometry (0.835167ms)
-✔ input controls enforce integer, 15-minute, and 30-minute steps (0.520875ms)
-✔ reachable form error branches: end before start, malformed HH:MM, unknown zone, empty zone list (0.504666ms)
-✔ service cycle control: range check, operating-days cross check, and no effect on coverage (226.392416ms)
-✔ zones with no feasible route in the operating window get zero allocated days (1.957458ms)
-✔ 최소안 browser result matches the Python reference (76.720959ms)
-✔ 기본안 browser result matches the Python reference (103.683875ms)
-✔ 확대안 browser result matches the Python reference (104.689333ms)
-✔ two-zone slice matches the Python reference solver numerically (9.66325ms)
-✔ two-zone slice stays inside those zones and skips 14-zone fairness (112.534625ms)
-✔ one-zone calculate stays inside that zone and skips 14-zone fairness (118.041417ms)
-✔ shorter service time cannot reduce optimized coverage (204.7695ms)
+✔ dashboard bundle covers all Jeonbuk admins and service zones (1.683542ms)
+✔ map bundle contains real boundaries, roads, and directed route geometry (0.728042ms)
+✔ input controls enforce integer, 15-minute, and 30-minute steps (0.426458ms)
+✔ reachable form error branches: end before start, malformed HH:MM, unknown zone, empty zone list (0.384875ms)
+✔ service cycle control: range check, operating-days cross check, and no effect on coverage (183.19025ms)
+✔ zones with no feasible route in the operating window get zero allocated days (1.76375ms)
+✔ 최소안 browser result matches the Python reference (57.875209ms)
+✔ 기본안 browser result matches the Python reference (78.474334ms)
+✔ 확대안 browser result matches the Python reference (80.149ms)
+✔ two-zone slice matches the Python reference solver numerically (15.13275ms)
+✔ two-zone slice stays inside those zones and skips 14-zone fairness (87.056833ms)
+✔ one-zone calculate stays inside that zone and skips 14-zone fairness (86.071959ms)
+✔ shorter service time cannot reduce optimized coverage (157.6235ms)
 ℹ tests 13
 ℹ suites 0
 ℹ pass 13
@@ -49,7 +49,7 @@ selected k=2; silhouette=0.686; stability median/p10=1.000/0.753
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1093.867542
+ℹ duration_ms 866.228875
   OK  전북 243개 행정동 유형·경로·민감도와 브라우저 엔진
 == 4. 상세 무결성 재계산 ==
 PASS raw_outlet_count: 681
@@ -124,7 +124,7 @@ PASS jeongeup_post_ids_valid: 19
 PASS jeongeup_distances_match_master: 23
 PASS jeongeup_population_guard: False
 
-71/71 checks PASS → /Users/jaewon/Downloads/금방_전북금융사각지대진단과찾아가는은행최적동선설계_코드분석파일/data/processed/validation_checks.csv
+71/71 checks PASS → /Users/jaewon/Desktop/프로젝트/products/2026-jeonbuk-finance-access-clean/data/processed/validation_checks.csv
   OK  상세 검증 재계산
 == 5. 공유 데이터 ==
   OK  points_raw.csv: 681행
@@ -139,7 +139,6 @@ PASS jeongeup_population_guard: False
   OK  ecos_jeonbuk_loans_202508_202605.csv: 10행
   OK  venues_jeonbuk.csv: 6,856행
   OK  venues_jeonbuk_geocode_failed.csv: 24행
-  OK  geocode_cache.json: JSON 파싱
   OK  jeongeup_demo.json: JSON 파싱
   OK  jeongeup_geom.json: JSON 파싱
   OK  jeongeup_post.json: JSON 파싱
