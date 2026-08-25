@@ -16,7 +16,8 @@
       "snapshot_sha256": "a394b1741d89f9c3556b6d83845b899f8ebe32f13fd77646fa07cabf76c286b4",
       "snapshot_bytes": 34653221,
       "license_or_terms": "CC BY 4.0 and upstream SGIS attribution",
-      "model_role": "admin boundaries and representative-point containment"
+      "model_role": "admin boundaries and representative-point containment",
+      "public_repo_included": true
     },
     {
       "source_id": "mois_age_sex_20260630",
@@ -31,7 +32,8 @@
       "snapshot_sha256": "4d1530f251b312ce6564ba5676093b1043057f46a0fe2a58cf2756afc530da7b",
       "snapshot_bytes": 2563714,
       "license_or_terms": "official public-statistics download; attribution retained",
-      "model_role": "administrative population and 65-plus ratio"
+      "model_role": "administrative population and 65-plus ratio",
+      "public_repo_included": true
     },
     {
       "source_id": "koreapost_offices_20250301",
@@ -46,7 +48,8 @@
       "snapshot_sha256": "5f49c1a1af7868f0f871fc7568a9ca1feb0834a7395b17fe840150e379645f28",
       "snapshot_bytes": 529060,
       "license_or_terms": "공공데이터포털 이용허락범위 제한 없음",
-      "model_role": "postal financial-access points and reported finance hours"
+      "model_role": "postal financial-access points and reported finance hours",
+      "public_repo_included": true
     },
     {
       "source_id": "kfb_jeonbuk_branches_202512",
@@ -61,8 +64,9 @@
       "local_file": "data/raw/points/kfb_jeonbuk_full.csv",
       "snapshot_sha256": "78ae1914677e741d5287f9813b8d3bc12cd63e388d4c7f51a7278188725eef77",
       "snapshot_bytes": 15309,
-      "license_or_terms": "source page citation; raw snapshot not redistributed",
-      "model_role": "commercial-bank access points"
+      "license_or_terms": "source page citation; raw snapshot not redistributed; raw snapshot/response cache kept privately by the team (excluded from public repository); SHA-256 retained for lineage verification",
+      "model_role": "commercial-bank access points",
+      "public_repo_included": false
     },
     {
       "source_id": "cu_jeonbuk_search_20260810",
@@ -77,8 +81,9 @@
       "local_file": "data/raw/points/cu_jeonbuk.csv",
       "snapshot_sha256": "a807a3813dccb96d15272a906442ea51d66cb2a4d71d30a8b0e80e79a61934a2",
       "snapshot_bytes": 16484,
-      "license_or_terms": "source page citation; raw snapshot not redistributed",
-      "model_role": "credit-union access points"
+      "license_or_terms": "source page citation; raw snapshot not redistributed; raw snapshot/response cache kept privately by the team (excluded from public repository); SHA-256 retained for lineage verification",
+      "model_role": "credit-union access points",
+      "public_repo_included": false
     },
     {
       "source_id": "kfcc_jeonbuk_20260811",
@@ -95,8 +100,9 @@
       "snapshot_bytes": 12522,
       "auxiliary_file": "data/raw/points/kfcc_collection_metadata.json",
       "auxiliary_sha256": "2e7378cff8bf0cf472d6f4dc41e86713ba41b4586ea9036e53470c15d8dd4433",
-      "license_or_terms": "source page citation; raw snapshot not redistributed",
-      "model_role": "community credit-cooperative access points"
+      "license_or_terms": "source page citation; raw snapshot not redistributed; raw snapshot/response cache kept privately by the team (excluded from public repository); SHA-256 retained for lineage verification",
+      "model_role": "community credit-cooperative access points",
+      "public_repo_included": false
     },
     {
       "source_id": "osm_south_korea_20260811",
@@ -111,7 +117,8 @@
       "snapshot_sha256": "6bb2135f5bbd79294372e0437c8c87ac169b30935eb29f4cda4061d767f8cafb",
       "snapshot_bytes": 285013781,
       "license_or_terms": "Open Database License 1.0",
-      "model_role": "directed road-distance and route matrices"
+      "model_role": "directed road-distance and route matrices",
+      "public_repo_included": true
     },
     {
       "source_id": "kakao_local_geocoding_20260811",
@@ -125,8 +132,9 @@
       "local_file": "data/processed/geocode_cache.json",
       "snapshot_sha256": "4a2542f9e0171dca90eabba72b88a333c1ead6722c3c56770422ae44959bb787",
       "snapshot_bytes": 134715,
-      "license_or_terms": "Kakao API terms; cache used for reproducibility",
-      "model_role": "outlet coordinates and reverse-address audit"
+      "license_or_terms": "Kakao API terms; cache used for reproducibility; raw snapshot/response cache kept privately by the team (excluded from public repository); SHA-256 retained for lineage verification",
+      "model_role": "outlet coordinates and reverse-address audit",
+      "public_repo_included": false
     },
     {
       "source_id": "jeonbuk_senior_centers_20241231",
@@ -141,7 +149,8 @@
       "snapshot_sha256": "0c013ca5edb75b23be48076385e5f359b7346470aee721623344d0ab08d001a2",
       "snapshot_bytes": 442567,
       "license_or_terms": "공공데이터포털 이용허락범위 제한 없음",
-      "model_role": "candidate mobile-service venue proxies"
+      "model_role": "candidate mobile-service venue proxies",
+      "public_repo_included": true
     },
     {
       "source_id": "ecos_141Y003_202508_202605",
@@ -157,7 +166,8 @@
       "snapshot_sha256": "9cae724befbaba5a621bf8fef44681e1ebb01c2a24f6d81b8f9255c6ae86aefc",
       "snapshot_bytes": 570,
       "license_or_terms": "한국은행 ECOS source attribution",
-      "model_role": "competition-required regional finance context only; not a model input"
+      "model_role": "competition-required regional finance context only; not a model input",
+      "public_repo_included": true
     }
   ]
 }

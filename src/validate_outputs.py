@@ -509,6 +509,9 @@ def main(*, raw_lineage: bool = False) -> int:
         is_raw = path.is_relative_to(DATA_RAW)
         if is_raw and not raw_lineage:
             continue
+        # 재배포 제한으로 비공개 보관하는 스냅샷은 파일이 있을 때만 해시를 대조한다
+        if not source.get("public_repo_included", True) and not path.is_file():
+            continue
         if not path.is_file():
             (raw_snapshot_errors if is_raw else tracked_snapshot_errors).append(
                 f"{source['source_id']}:missing"

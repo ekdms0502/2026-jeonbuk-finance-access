@@ -73,7 +73,7 @@ for name, expected in expected_rows.items():
         raise SystemExit(f"FAIL {path}: {len(rows)}행, 예상 {expected}행")
     print(f"  OK  {name}: {len(rows):,}행")
 
-for name in ("geocode_cache.json", "jeongeup_demo.json", "jeongeup_geom.json",
+for name in ("jeongeup_demo.json", "jeongeup_geom.json",
              "jeongeup_post.json", "jeongeup_snapshot_metadata.json", "roadnet_metadata.json",
              "typology_evaluation.json", "venues_jeonbuk_metadata.json",
              "jeonbuk_route_scenario.json", "scenario_evidence.json",

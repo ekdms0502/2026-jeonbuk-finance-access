@@ -28,16 +28,18 @@ ECOS는 대회 필수 데이터 요건에 사용하지만 접점 위치나 거�
 | 1 | 행정동 경계 | 통계청 SGIS 기반 vuski/admdongkor CC BY 4.0 재배포본 | 전국 3,558 / 전북 243, WGS84, 2026-07-01 기준 | `data/raw/hjd2026.geojson` | 2026-08-10 |
 | 2 | 성별·연령별 주민등록인구 | 행정안전부·공공데이터포털 | CP949 CSV, 230컬럼, 2026-06-30 기준 | `data/raw/mois_haengjeongdong_age_sex_20260630.csv` | 2026-08-10 |
 | 3 | 우체국 정보 | 우정사업본부·공공데이터포털 공개 CSV | 전국 3,264 / 전북 주소 243 | `data/raw/post_offices_utf8.csv` | 2026-08-10 |
-| 4 | 은행 점포 | 전국은행연합회 공시 열람 집계 | 전북 175, 2025.12말 기준 | `data/raw/points/kfb_jeonbuk_full.csv` | 2026-08-10 |
-| 5 | 신협 점포 | 신협중앙회 점포 조회 | 전북 128 | `data/raw/points/cu_jeonbuk.csv` | 2026-08-10 |
-| 6 | 새마을금고 점포 | 새마을금고중앙회 `map/list.do` | 전북 141; 14개 시군별 `endElement`=실제 행수 | `data/raw/points/kfcc_mg_jeonbuk.csv`, `data/raw/points/kfcc_collection_metadata.json` | 2026-08-11 |
+| 4 | 은행 점포 | 전국은행연합회 공시 열람 집계 | 전북 175, 2025.12말 기준 | `data/raw/points/kfb_jeonbuk_full.csv` (비공개 보관) | 2026-08-10 |
+| 5 | 신협 점포 | 신협중앙회 점포 조회 | 전북 128 | `data/raw/points/cu_jeonbuk.csv` (비공개 보관) | 2026-08-10 |
+| 6 | 새마을금고 점포 | 새마을금고중앙회 `map/list.do` | 전북 141; 14개 시군별 `endElement`=실제 행수 | `data/raw/points/kfcc_mg_jeonbuk.csv` (비공개 보관), `data/raw/points/kfcc_collection_metadata.json` | 2026-08-11 |
 | 7 | 도로망 | OpenStreetMap Geofabrik south-korea PBF | MD5 `9269d6a6df9c7053fe3aeb31fcf41da2` | `data/raw/south-korea-latest.osm.pbf` | 2026-08-11 |
-| 8 | 주소·장소명 좌표 | 카카오 로컬 API | 681건; 주소 679, 장소명 2 | `data/processed/geocode_cache.json` | 2026-08-11 |
+| 8 | 주소·장소명 좌표 | 카카오 로컬 API | 681건; 주소 679, 장소명 2 | `data/processed/geocode_cache.json` (비공개 보관) | 2026-08-11 |
 | 9 | 전북 시군 경로당 현황 | [공공데이터포털](https://www.data.go.kr/data/15131430/fileData.do) | 14개 시군 6,880건, 시군명·경로당명·주소, 좌표·전화번호 없음, 2024-12-31 기준 | `data/raw/venues/jeonbuk_senior_centers_20241231.csv` | 2026-08-12 |
 
 정확한 원천 페이지·다운로드 URL, 기준일과 수집일의 구분, 수집 방식·질의, 라이선스·이용조건,
 로컬 원본 SHA-256·바이트 수는 `data/source_manifest.json`이 기계판독 가능한 진실원천이다.
 로그인·상태 의존 조회는 조회 화면과 필터를 기록하고 원본 스냅샷은 재배포하지 않는다.
+재배포 제한 스냅샷과 카카오 응답 캐시는 팀이 비공개 보관하며(공개 저장소 미포함),
+SHA-256을 매니페스트에 남겨 계보 검증 시 대조한다.
 
 은행 175건은 현재 파일의 레코드 수다. 한국은행 2024년말 178개와는 분류·기준일이 달라 `98.3% 완전성`의 분모로 사용하지 않는다. 전수성을 주장하려면 전국은행연합회의 공식 전체 내보내기 또는 수집 로그가 추가로 필요하다.
 
@@ -206,3 +208,19 @@ PYTHONPATH=src .venv/bin/python src/validate_outputs.py
 ## 11. 개인정보·라이선스
 
 공개 기관 목록, 공공 통계, 공개 도로망만 사용하며 개인·고객·거래 단위 자료를 사용하지 않는다. 재배포 조건은 `THIRD_PARTY_NOTICES.md`를 따른다.
+
+## 부록: `access_road.csv` 보조 컬럼 정의
+
+[서식 13] 데이터셋 설명서의 컬럼 정의서(주요 35열)에 싣지 않은 나머지 14열의 정의다.
+전체 49열 = 주요 35열 + 아래 14열.
+
+| 컬럼명 | 정의 |
+|---|---|
+| `nearest_outlet_id` | 최근접(분석 가용 기준) 접점의 내부 식별자 |
+| `nearest_open_km` / `nearest_open_name` | 분석 가용(`finance_open_proxy_Y`) 접점 기준 최근접 직선거리·명칭. `nearest_km`·`nearest_name`과 같은 기준의 명시적 별칭 |
+| `nearest_any_km` / `nearest_any_outlet_id` / `nearest_any_name` / `nearest_any_type` | 영업 상태 불문 전체 접점 기준 최근접 직선거리와 그 접점의 식별자·명칭·유형 |
+| `distance_model` | 직선거리 산출 방식 라벨 (`largest_polygon_interior_point_straight_line`) |
+| `road_outlet_id` / `road_nearest_name` / `road_nearest_type` | 도로거리 기준 최근접 접점의 식별자·명칭·유형 |
+| `route_straight_km` | 도로거리 기준 최근접 접점까지의 직선거리 (우회계수 분모) |
+| `max_snap_km` | 대표점·접점을 도로 노드에 붙일 때 허용한 스냅 거리 상한 (상수) |
+| `admin_snap_strategy` | 대표점 스냅 방식 (`exact_nearest_node` 또는 도달 가능 노드 폴백) |
