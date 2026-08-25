@@ -1,0 +1,244 @@
+﻿code,sigungu,dong,analysis_cohort,typology_status,cluster_id,cluster_label,rule_type,rule_quality,road_km,cnt_3km,ratio_65plus,road_distance_primary
+5211151000,전주시완산구,중앙동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.543,108,29.3,Y
+5211153000,전주시완산구,풍남동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.288,59,45.8,Y
+5211160500,전주시완산구,노송동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.715,75,34.7,Y
+5211163500,전주시완산구,완산동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.972,81,35.4,Y
+5211165000,전주시완산구,동서학동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,4.249,0,40.4,Y
+5211166000,전주시완산구,서서학동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.684,29,37.5,Y
+5211167100,전주시완산구,중화산1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.324,113,26.0,Y
+5211167200,전주시완산구,중화산2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.458,120,15.4,Y
+5211168000,전주시완산구,서신동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.516,94,17.2,Y
+5211169100,전주시완산구,평화1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.852,43,37.3,Y
+5211169200,전주시완산구,평화2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.726,12,22.9,Y
+5211170100,전주시완산구,삼천1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.359,79,26.0,Y
+5211170200,전주시완산구,삼천2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.268,58,29.6,Y
+5211170300,전주시완산구,삼천3동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,4.208,0,24.2,Y
+5211171100,전주시완산구,효자1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.68,90,27.2,Y
+5211171200,전주시완산구,효자2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.416,101,30.2,Y
+5211171300,전주시완산구,효자3동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.046,75,27.0,Y
+5211171400,전주시완산구,효자4동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.922,41,13.1,Y
+5211173000,전주시완산구,효자5동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.859,68,8.4,Y
+5211352500,전주시덕진구,진북동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.064,116,37.6,Y
+5211354000,전주시덕진구,인후1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.096,71,24.2,Y
+5211355000,전주시덕진구,인후2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.529,81,33.1,Y
+5211356000,전주시덕진구,인후3동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.257,63,17.5,Y
+5211357000,전주시덕진구,덕진동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.694,91,16.4,Y
+5211357500,전주시덕진구,금암동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.422,100,24.9,Y
+5211360000,전주시덕진구,팔복동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.144,45,32.4,Y
+5211361100,전주시덕진구,우아1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.729,42,22.1,Y
+5211361200,전주시덕진구,우아2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,5.773,10,22.7,Y
+5211362000,전주시덕진구,호성동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.397,26,24.7,Y
+5211364100,전주시덕진구,송천1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.594,53,15.2,Y
+5211364200,전주시덕진구,송천2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,2.677,21,20.9,Y
+5211364300,전주시덕진구,송천3동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.369,29,6.0,Y
+5211365000,전주시덕진구,조촌동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,7.402,0,25.8,Y
+5211366500,전주시덕진구,여의동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.107,26,22.1,Y
+5211367000,전주시덕진구,혁신동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.368,20,6.6,Y
+5213025000,군산시,옥구읍,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.871,2,48.7,Y
+5213031000,군산시,옥산면,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,1.116,8,25.8,Y
+5213032000,군산시,회현면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,4.918,0,39.8,Y
+5213033000,군산시,임피면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.139,1,50.5,Y
+5213034000,군산시,서수면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.507,1,52.6,Y
+5213035000,군산시,대야면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,16.473,2,51.4,Y
+5213036000,군산시,개정면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.484,4,48.5,Y
+5213037000,군산시,성산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.815,2,48.6,Y
+5213038000,군산시,나포면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.857,1,54.1,Y
+5213039000,군산시,옥도면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,7.341,0,39.6,Y
+5213040000,군산시,옥서면,rural_peer,excluded_route_quality,,,상대적 접근양호형,route_quality_uncertain,1.957,2,47.1,N
+5213051500,군산시,해신동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.48,21,48.2,Y
+5213053000,군산시,월명동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.167,42,44.0,Y
+5213055000,군산시,신풍동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.471,47,39.9,Y
+5213056000,군산시,삼학동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.636,56,47.6,Y
+5213060500,군산시,중앙동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.732,45,35.9,Y
+5213064000,군산시,흥남동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.848,56,28.8,Y
+5213065000,군산시,조촌동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.393,38,16.3,Y
+5213066000,군산시,경암동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.348,45,38.6,Y
+5213067000,군산시,구암동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.901,8,16.2,Y
+5213068000,군산시,개정동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.462,17,39.4,Y
+5213069000,군산시,수송동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.366,51,13.4,Y
+5213070100,군산시,나운1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.279,49,28.3,Y
+5213070200,군산시,나운2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.215,55,26.9,Y
+5213070300,군산시,나운3동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.868,18,19.3,Y
+5213071000,군산시,소룡동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.494,3,22.1,Y
+5213072000,군산시,미성동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,3.965,0,26.3,Y
+5214025000,익산시,함열읍,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.302,4,41.6,Y
+5214031000,익산시,오산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.584,1,39.7,Y
+5214032000,익산시,황등면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.615,4,42.6,Y
+5214033000,익산시,함라면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.461,1,50.6,Y
+5214034000,익산시,웅포면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,4.021,0,55.5,Y
+5214035000,익산시,성당면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.25,1,53.1,Y
+5214036000,익산시,용안면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.805,2,55.1,Y
+5214037000,익산시,낭산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.833,1,47.6,Y
+5214038000,익산시,망성면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.414,1,56.1,Y
+5214039000,익산시,여산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.279,2,45.4,Y
+5214040000,익산시,금마면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.554,2,36.2,Y
+5214041000,익산시,왕궁면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.638,1,41.2,Y
+5214042000,익산시,춘포면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,4.452,0,41.1,Y
+5214043000,익산시,삼기면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.799,1,45.6,Y
+5214044000,익산시,용동면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.131,1,58.8,Y
+5214052000,익산시,중앙동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.267,33,38.1,Y
+5214053000,익산시,평화동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,2.309,20,25.5,Y
+5214056000,익산시,인화동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.854,25,38.2,Y
+5214057000,익산시,동산동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,2.363,7,28.8,Y
+5214058000,익산시,마동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.238,48,15.5,Y
+5214059500,익산시,남중동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.255,48,35.7,Y
+5214061000,익산시,모현동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.568,35,23.1,Y
+5214062000,익산시,송학동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.925,26,17.2,Y
+5214064600,익산시,영등1동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.558,52,23.9,Y
+5214064700,익산시,영등2동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.823,33,14.7,Y
+5214065200,익산시,어양동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.373,35,15.6,Y
+5214065600,익산시,신동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.716,13,24.0,Y
+5214067000,익산시,팔봉동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.814,11,25.3,Y
+5214069000,익산시,삼성동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,3.547,22,16.3,Y
+5218025000,정읍시,신태인읍,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.655,3,45.6,Y
+5218031000,정읍시,북면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.487,1,41.7,Y
+5218032000,정읍시,입암면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.295,1,50.5,Y
+5218033000,정읍시,소성면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.892,1,53.1,Y
+5218034000,정읍시,고부면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.553,1,52.2,Y
+5218035000,정읍시,영원면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.178,1,55.0,Y
+5218036000,정읍시,덕천면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.204,1,47.8,Y
+5218037000,정읍시,이평면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.534,1,54.3,Y
+5218038000,정읍시,정우면,rural_peer,excluded_route_quality,,,고령집중형,route_quality_uncertain,2.933,1,50.9,N
+5218039000,정읍시,태인면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.001,2,51.2,Y
+5218040000,정읍시,감곡면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.271,1,55.7,Y
+5218041000,정읍시,옹동면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.706,1,51.5,Y
+5218042000,정읍시,칠보면,rural_peer,excluded_route_quality,,,장거리형,route_quality_uncertain,8.458,0,48.6,N
+5218043000,정읍시,산내면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.9,1,53.5,Y
+5218044000,정읍시,산외면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.325,2,53.2,Y
+5218051000,정읍시,수성동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.276,19,21.1,Y
+5218052000,정읍시,장명동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,3.941,16,33.4,Y
+5218053500,정읍시,내장상동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,2.06,1,22.7,Y
+5218054500,정읍시,시기동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.16,20,40.1,Y
+5218056500,정읍시,초산동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.173,18,21.5,Y
+5218057000,정읍시,연지동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.503,19,32.0,Y
+5218058000,정읍시,농소동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,4.376,3,28.0,Y
+5218059500,정읍시,상교동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,5.356,0,37.5,Y
+5219025000,남원시,운봉읍,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.125,2,49.2,Y
+5219031000,남원시,주천면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,6.246,0,44.7,Y
+5219032000,남원시,수지면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.827,1,52.6,Y
+5219033000,남원시,송동면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.89,1,51.2,Y
+5219034000,남원시,주생면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.795,1,51.8,Y
+5219035000,남원시,금지면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.37,1,55.4,Y
+5219036000,남원시,대강면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.99,1,60.6,Y
+5219037000,남원시,대산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.955,1,51.1,Y
+5219038000,남원시,사매면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,4.536,1,51.7,Y
+5219039000,남원시,덕과면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,5.0,0,53.3,Y
+5219040000,남원시,보절면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.811,1,56.6,Y
+5219041000,남원시,산동면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.708,2,53.6,Y
+5219042000,남원시,이백면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,0.431,1,46.9,Y
+5219045000,남원시,아영면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.835,2,49.3,Y
+5219046000,남원시,산내면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,7.347,0,38.9,Y
+5219047000,남원시,인월면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.077,3,43.7,Y
+5219051000,남원시,동충동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.194,20,36.2,Y
+5219052000,남원시,죽항동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,0.4,20,38.6,Y
+5219054000,남원시,노암동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.365,19,25.8,Y
+5219055000,남원시,금동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.231,15,30.7,Y
+5219056000,남원시,왕정동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,2.678,12,28.0,Y
+5219057000,남원시,향교동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,3.555,2,33.5,Y
+5219059000,남원시,도통동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,6.293,2,18.1,Y
+5221025000,김제시,만경읍,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.209,2,49.9,Y
+5221032000,김제시,죽산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.853,1,54.8,Y
+5221033000,김제시,백산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.09,1,31.0,Y
+5221034000,김제시,용지면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.057,1,50.0,Y
+5221035000,김제시,백구면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,0.941,1,44.9,Y
+5221036000,김제시,부량면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,5.611,0,50.5,Y
+5221038000,김제시,공덕면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,7.877,0,46.6,Y
+5221039000,김제시,청하면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.625,1,51.8,Y
+5221040000,김제시,성덕면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.862,1,50.5,Y
+5221041000,김제시,진봉면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.617,2,55.8,Y
+5221042000,김제시,금구면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.39,1,35.7,Y
+5221043000,김제시,봉남면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.568,1,53.2,Y
+5221044000,김제시,황산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.462,1,48.4,Y
+5221045000,김제시,금산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,4.196,0,47.1,Y
+5221046000,김제시,광활면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,0.772,1,49.3,Y
+5221051000,김제시,요촌동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.703,15,28.8,Y
+5221052000,김제시,신풍동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,3.869,1,28.1,Y
+5221054000,김제시,검산동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,2.186,5,23.4,Y
+5221058000,김제시,교월동,urban_comparator,outside_rural_peer_cohort,,,,outside_rural_peer_cohort,1.143,10,34.4,Y
+5271025000,완주군,삼례읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,1.698,4,21.9,Y
+5271025300,완주군,봉동읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,2.141,6,20.3,Y
+5271025600,완주군,용진읍,rural_peer,excluded_route_quality,,,장거리형,route_quality_uncertain,4.223,5,27.7,N
+5271032000,완주군,상관면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,4.431,1,35.5,Y
+5271033000,완주군,이서면,rural_peer,assigned_exploratory,1,농촌 접점중심형,장거리형,primary,7.688,9,18.8,Y
+5271034000,완주군,소양면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.893,2,44.6,Y
+5271035000,완주군,구이면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.72,1,41.1,Y
+5271036000,완주군,고산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.374,3,42.1,Y
+5271037000,완주군,비봉면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,5.79,1,48.3,Y
+5271038000,완주군,운주면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,6.119,0,52.0,Y
+5271039000,완주군,화산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.771,1,45.3,Y
+5271040000,완주군,동상면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,0.862,1,46.7,Y
+5271041000,완주군,경천면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,9.068,0,53.8,Y
+5272025000,진안군,진안읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,장거리형,primary,3.51,7,35.0,Y
+5272031000,진안군,용담면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,7.5,1,52.4,Y
+5272032000,진안군,안천면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.769,1,50.5,Y
+5272033000,진안군,동향면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.09,1,50.1,Y
+5272034000,진안군,상전면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,7.181,1,49.5,Y
+5272035000,진안군,백운면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.304,1,44.7,Y
+5272036000,진안군,성수면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.89,1,48.8,Y
+5272037000,진안군,마령면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.531,2,50.2,Y
+5272038000,진안군,부귀면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,0.453,1,40.7,Y
+5272039000,진안군,정천면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.683,1,43.1,Y
+5272040000,진안군,주천면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,6.121,1,55.5,Y
+5273025000,무주군,무주읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,0.792,6,29.0,Y
+5273031000,무주군,무풍면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,7.179,0,49.6,Y
+5273032000,무주군,설천면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,8.807,0,39.8,Y
+5273033000,무주군,적상면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.868,1,51.2,Y
+5273034000,무주군,안성면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.328,0,48.8,Y
+5273035000,무주군,부남면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.955,1,56.8,Y
+5274025000,장수군,장수읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,장거리형,primary,3.228,5,32.4,Y
+5274031000,장수군,산서면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.353,2,49.4,Y
+5274032000,장수군,번암면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,5.225,1,53.8,Y
+5274033500,장수군,장계면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,4.593,0,37.1,Y
+5274034000,장수군,천천면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.081,1,52.5,Y
+5274035000,장수군,계남면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.336,1,43.7,Y
+5274036000,장수군,계북면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.09,1,50.1,Y
+5275025000,임실군,임실읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,2.896,3,29.1,Y
+5275031000,임실군,청웅면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.929,1,53.0,Y
+5275032000,임실군,운암면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,9.874,0,49.1,Y
+5275033000,임실군,신평면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.426,1,51.6,Y
+5275034000,임실군,성수면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.341,1,52.3,Y
+5275035500,임실군,오수면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,0.946,2,49.1,Y
+5275036000,임실군,신덕면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.915,1,51.4,Y
+5275037000,임실군,삼계면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.487,1,58.3,Y
+5275038000,임실군,관촌면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.191,2,45.0,Y
+5275039000,임실군,강진면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.787,2,48.4,Y
+5275040000,임실군,덕치면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.986,1,50.9,Y
+5275041000,임실군,지사면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.55,1,48.4,Y
+5277025000,순창군,순창읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,1.589,6,24.0,Y
+5277031000,순창군,인계면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,6.58,0,46.6,Y
+5277032000,순창군,동계면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.482,2,50.8,Y
+5277033000,순창군,풍산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.932,1,50.8,Y
+5277034000,순창군,금과면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.889,1,50.2,Y
+5277035000,순창군,팔덕면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.564,1,46.7,Y
+5277036000,순창군,쌍치면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.29,2,47.1,Y
+5277037000,순창군,복흥면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,3.491,1,46.1,Y
+5277038000,순창군,적성면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,4.068,1,50.3,Y
+5277039000,순창군,유등면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,5.087,0,52.8,Y
+5277040000,순창군,구림면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.028,1,51.4,Y
+5279025000,고창군,고창읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,0.497,6,27.0,Y
+5279031000,고창군,고수면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.717,1,49.7,Y
+5279032000,고창군,아산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,4.59,0,50.6,Y
+5279033000,고창군,무장면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.545,2,47.5,Y
+5279034000,고창군,공음면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.616,2,54.5,Y
+5279035000,고창군,상하면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.334,2,50.1,Y
+5279036000,고창군,해리면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,4.113,1,57.1,Y
+5279037000,고창군,성송면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.361,1,56.5,Y
+5279038000,고창군,대산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,7.505,2,54.1,Y
+5279039000,고창군,심원면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,1.862,1,47.0,Y
+5279040000,고창군,흥덕면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.412,1,49.1,Y
+5279041000,고창군,성내면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,0.708,1,54.6,Y
+5279042000,고창군,신림면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.58,1,52.0,Y
+5279043000,고창군,부안면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.898,0,53.4,Y
+5280025000,부안군,부안읍,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,2.146,8,27.9,Y
+5280031000,부안군,주산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.115,1,55.7,Y
+5280032000,부안군,동진면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.128,2,53.0,Y
+5280033000,부안군,행안면,rural_peer,assigned_exploratory,1,농촌 접점중심형,상대적 접근양호형,primary,1.011,9,44.6,Y
+5280034000,부안군,계화면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.178,1,52.5,Y
+5280035000,부안군,보안면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,1.734,2,56.8,Y
+5280036000,부안군,변산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,상대적 접근양호형,primary,2.869,1,41.1,Y
+5280037000,부안군,진서면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리형,primary,4.862,0,49.9,Y
+5280038000,부안군,백산면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.136,1,54.8,Y
+5280039000,부안군,상서면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,7.954,0,52.2,Y
+5280040000,부안군,하서면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,3.657,0,52.6,Y
+5280041000,부안군,줄포면,rural_peer,assigned_exploratory,2,장거리·접점희소형,장거리·고령집중형,primary,12.064,2,50.2,Y
+5280042000,부안군,위도면,rural_peer,assigned_exploratory,2,장거리·접점희소형,고령집중형,primary,2.478,1,51.3,Y

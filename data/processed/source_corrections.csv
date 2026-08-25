@@ -1,0 +1,2 @@
+﻿correction_id,type,name,field,source_value,corrected_value,evidence_title,evidence_url,verification_date,reason
+CORR-001,은행,NH농협은행 전북혁신도시지점,주소,전북특별자치도 전주시 안전로 163,전북특별자치도 완주군 이서면 안전로 163,NH농협은행 공식 채용공고,https://with.nonghyup.com/jbnf/jbnfDtl.do?jbnfSqno=76719,2026-08-11,공식 지점 소재지와 도로명주소는 완주군 이서면이나 원천 목록은 전주시로 표기

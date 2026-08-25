@@ -1,0 +1,21 @@
+﻿check,status,observed,expected
+raw_outlet_count,PASS,681,681
+raw_type_counts,PASS,"{'우체국': 242, '은행': 175, '신협': 128, '새마을금고': 136}","{'우체국': 242, '은행': 175, '신협': 128, '새마을금고': 136}"
+raw_outlet_id_unique,PASS,681,681
+raw_exact_key_unique,PASS,681,681
+source_snapshot_complete,PASS,681,681
+source_correction_ledger,PASS,1/1/전북특별자치도 완주군 이서면 안전로 163,1/1/전북특별자치도 완주군 이서면 안전로 163
+geocode_partition,PASS,681+0,681
+no_admin_center_fallback,PASS,0,0
+all_geocodes_inside_admin,PASS,681,681
+admin_conflicts_flagged,PASS,"[('NH농협은행 전북혁신도시지점', 'verified_address_boundary_conflict')]",one verified address/boundary conflict
+geocode_id_partition,PASS,681,681
+validated_outlets_preserve_geocoded,PASS,681,681
+eligible_outlet_count,PASS,643,643
+cluster_membership_total,PASS,681,681
+cluster_id_assigned,PASS,681,681
+reverse_audit_required_cases,PASS,5,5
+reverse_audit_addresses_present,PASS,60,60
+reverse_audit_status_consistent,PASS,"Counter({'PASS': 59, 'REVIEW': 1})",PASS iff sigungu matches
+admin_access_count,PASS,243,243
+admin_code_unique,PASS,243,243

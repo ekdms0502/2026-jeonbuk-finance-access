@@ -1,0 +1,107 @@
+{
+  "scenario_id": "jeonbuk-default-v1",
+  "analysis_date": "2026-08-12",
+  "target_selector": {
+    "road_km_gt": 3.0,
+    "require_road_distance_primary": true
+  },
+  "priority_tiers": [
+    {
+      "tier_id": "P1",
+      "description": "대표점 도로거리 5km 초과",
+      "road_km_gt": 5.0
+    },
+    {
+      "tier_id": "P2",
+      "description": "대표점 도로거리 3km 초과 5km 이하",
+      "road_km_gt": 3.0
+    }
+  ],
+  "vehicle_count": 3,
+  "operating_days_per_cycle": 5,
+  "minimum_route_days_per_active_zone": 1,
+  "operating_start": "09:00",
+  "operating_end": "17:00",
+  "service_minutes_default": 45,
+  "venue_time_window_default": {
+    "start": "09:00",
+    "end": "16:30"
+  },
+  "max_stops_per_route": 4,
+  "service_cycle_days": 7,
+  "candidate_count_per_target": 1,
+  "depot": {
+    "preferred_outlet_types": [
+      "우체국"
+    ],
+    "start_outlet_id_by_zone": {},
+    "end_outlet_id_by_zone": {}
+  },
+  "travel_time_assumption": {
+    "uniform_speed_kmh": 40.0
+  },
+  "input_controls": {
+    "vehicle_count": {
+      "min": 1,
+      "max": 10,
+      "step": 1
+    },
+    "operating_days_per_cycle": {
+      "min": 1,
+      "max": 7,
+      "step": 1
+    },
+    "operating_time": {
+      "min": "06:00",
+      "max": "22:00",
+      "step_minutes": 30
+    },
+    "service_minutes": {
+      "min": 15,
+      "max": 120,
+      "step": 15
+    },
+    "max_stops_per_route": {
+      "min": 1,
+      "max": 7,
+      "step": 1
+    },
+    "service_cycle_days": {
+      "min": 1,
+      "max": 14,
+      "step": 1
+    }
+  },
+  "sensitivity_presets": [
+    {
+      "preset_id": "minimum",
+      "label": "최소안",
+      "vehicle_count": 1,
+      "operating_days_per_cycle": 5,
+      "operating_start": "09:00",
+      "operating_end": "17:00",
+      "service_minutes": 45,
+      "max_stops_per_route": 4
+    },
+    {
+      "preset_id": "default",
+      "label": "기본안",
+      "vehicle_count": 3,
+      "operating_days_per_cycle": 5,
+      "operating_start": "09:00",
+      "operating_end": "17:00",
+      "service_minutes": 45,
+      "max_stops_per_route": 4
+    },
+    {
+      "preset_id": "expanded",
+      "label": "확대안",
+      "vehicle_count": 5,
+      "operating_days_per_cycle": 5,
+      "operating_start": "09:00",
+      "operating_end": "17:00",
+      "service_minutes": 45,
+      "max_stops_per_route": 4
+    }
+  ]
+}

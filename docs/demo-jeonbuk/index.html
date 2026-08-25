@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="전북 243개 행정동 금융 접근성 시범 진단과 찾아가는 금융 서비스 시나리오 비교. 현장 운영 시스템이 아닙니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📍</text></svg>">
+<title>전북 금융 접근성 진단 시스템</title>
+<link rel="stylesheet" href="../fonts/pretendard.css">
+<style>
+:root{
+  --navy:#002047;--blue:#1769E0;--ink:rgba(0,0,0,.85);--muted:rgba(0,0,0,.61);--line:#cbd5e1;--header-line:#e5e5ec;
+  --bg:#f8fafc;--card:#fff;--p1:#ED1C20;--p2:#F1790F;--ok:#0DB437;--focus:#f4c95d;
+  --dist-5:#F11D22;--dist-35:#FC750D;--dist-13:#FDB90D;--dist-1:#03AF69;
+  --type-post:#2563EB;--type-bank:#0891B2;--type-kfcc:#DB2777;--type-cu:#B45309;
+  --shadow:0 1px 1px rgba(0,0,0,.25);
+  --font-sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);line-height:1.5;letter-spacing:.15px;-webkit-font-smoothing:antialiased;word-break:keep-all}
+button,input,select{font:inherit}
+a{color:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.ico{display:inline-flex;overflow:clip;flex:none}
+.ico img{width:100%;height:100%;display:block;object-fit:contain}
+.ico-8{width:8px;height:8px}.ico-11{width:11px;height:11px}.ico-14{width:14px;height:14px}.ico-15{width:15px;height:15px}
+.ico-20{width:20px;height:20px}.ico-24{width:24px;height:24px}.ico-25{width:25px;height:25px}.ico-27{width:27px;height:27px}
+.ico-29{width:29px;height:29px}.ico-32{width:32px;height:32px}.ico-40{width:40px;height:40px}
+.app-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--header-line);display:flex;align-items:center;gap:20px;padding:0 16px 0 16px;min-height:73px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-name{font-size:15px;font-weight:650;letter-spacing:-.02em;color:#111}
+.demo-badge{display:inline-flex;align-items:center;height:22px;padding:0 8px;border:.7px solid var(--line);border-radius:999px;background:#f8fafc;color:rgba(0,0,0,.66);font-size:11px;font-weight:650;letter-spacing:-.02em;white-space:nowrap}
+.top-nav{display:flex;gap:4px;align-self:stretch}
+.top-nav button{border:0;background:transparent;color:rgba(0,0,0,.66);font-weight:600;font-size:15px;padding:0 16px;border-bottom:2px solid transparent;cursor:pointer}
+.top-nav button[aria-current="page"]{color:#111;border-bottom-color:#1769E0;font-weight:600}
+.header-actions{display:flex;align-items:center;gap:14px;margin-left:auto}
+.header-actions a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:rgba(0,0,0,.66);font-size:18px;font-weight:500}
+.icon-btn{position:relative;border:0;background:transparent;padding:0;cursor:pointer;display:inline-flex}
+.icon-btn:disabled,.account[aria-disabled="true"]{cursor:not-allowed;opacity:.72}
+.icon-btn .badge{position:absolute;top:0;right:-1px;padding:0}
+.account{display:flex;align-items:center;gap:6px;color:rgba(0,0,0,.87);font-size:16px}
+.page{width:min(1832px,calc(100% - 48px));margin:16px auto 28px}
+.view[hidden],.dist-toggle[hidden]{display:none!important}
+.overview-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px}
+.page-title{margin:0;font-size:36px;font-weight:650;letter-spacing:.15px;color:#111;line-height:1.5}
+.title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.page-sub{margin:4px 0 0;font-size:18px;color:rgba(0,0,0,.85)}
+.head-actions{display:flex;align-items:center;gap:18px;padding-top:28px}
+.as-of{display:inline-flex;align-items:center;gap:8px;color:rgba(0,0,0,.66);font-size:17px}
+.refresh{display:inline-flex;align-items:center;gap:8px;height:49px;padding:0 16px;border:0.8px solid var(--navy);border-radius:12px;background:#fff;box-shadow:var(--shadow);font-size:19px;font-weight:650;cursor:pointer}
+.metric-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:32px;margin-bottom:18px}
+.metric-card{background:var(--card);border:.7px solid var(--line);border-radius:12px;padding:16px 18px 12px;box-shadow:var(--shadow);min-height:145px}
+.metric-card .lbl{font-size:18px;font-weight:650;color:rgba(0,0,0,.85)}
+.kpi-top{display:flex;align-items:center;gap:18px}
+.kpi-ico{position:relative;width:40px;height:40px;flex:none}
+.kpi-ico .bg,.kpi-ico .fg{position:absolute;display:block}
+.kpi-ico .bg{inset:0;width:40px;height:40px}
+.kpi-ico .fg{left:50%;top:50%;transform:translate(-50%,-50%)}
+.kpi-value{margin:8px 0 0;text-align:center;font-weight:650;color:rgba(0,0,0,.85)}
+.kpi-value b{font-size:32px;font-weight:650}
+.kpi-value span{font-size:20px;margin-left:2px}
+.kpi-sub{margin-top:2px;text-align:right;font-size:17px;font-weight:500;color:rgba(0,0,0,.61)}
+.metric-card.alert-3 .kpi-value{color:rgba(241,121,15,.85)}
+.metric-card.alert-5 .kpi-value{color:rgba(237,28,32,.85)}
+.overview-grid{display:grid;grid-template-columns:minmax(0,1.95fr) minmax(280px,.95fr);gap:25px;margin-bottom:18px}
+.panel{background:var(--card);border:.7px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.panel-head{display:flex;align-items:center;gap:8px;margin:0 0 12px}
+.panel-head h2{margin:0;font-size:20px;font-weight:650;letter-spacing:-.5px}
+.map-host{position:relative}
+.mapbox{position:relative;min-height:380px;border:0;border-radius:0;overflow:hidden;background:#eef3f7}
+#map{width:100%;height:380px;display:block;touch-action:none;cursor:grab}
+#map.dragging{cursor:grabbing}
+.admin-boundary{fill:none;stroke:#cdd9e1;stroke-width:.55;vector-effect:non-scaling-stroke}
+.view-analysis .admin-boundary{fill:#f8fafc}
+.view-analysis .admin-boundary.zone-muted{fill:#edf2f5;opacity:.35}
+.view-analysis .admin-boundary.zone-active{fill:#fdfefe;stroke:#9fb8c8}
+.road{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.road.secondary{stroke:#c7cfd5;stroke-width:.55;opacity:.65}
+.road.primary{stroke:#aebbc4;stroke-width:.85;opacity:.78}
+.road.trunk{stroke:#91a3af;stroke-width:1.15;opacity:.88}
+.road.motorway{stroke:#7d929f;stroke-width:1.5;opacity:.92}
+.route-casing{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;opacity:.88;vector-effect:non-scaling-stroke}
+.route-line{fill:none;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round;opacity:.92;vector-effect:non-scaling-stroke;cursor:pointer}
+.route-line:hover{stroke-width:4}
+.route-node{fill:#475569;opacity:.58;pointer-events:none}
+.route-stop{fill:#fff;stroke-width:2;vector-effect:non-scaling-stroke}
+.route-stop-label{font-size:8px;font-weight:900;text-anchor:middle;dominant-baseline:central;pointer-events:none;paint-order:stroke fill;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round;stroke-linecap:round}
+.depot{fill:#102a43;stroke:#fff;stroke-width:1.5;vector-effect:non-scaling-stroke}
+.point{cursor:pointer;stroke:#fff;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.point:hover,.point.sel{stroke:#102a43;stroke-width:2.5;fill-opacity:1}
+.outlet-dot{stroke:#fff;stroke-width:.8;fill-opacity:1;vector-effect:non-scaling-stroke}
+.zone-label{font-size:9px;font-weight:800;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;fill:#526574;pointer-events:none}
+.map-ornament{fill:#102a43;font-size:9px;font-weight:800;pointer-events:none}
+.map-controls{position:absolute;right:12px;top:40px;display:grid;gap:0;border:.7px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;width:56px}
+.map-controls button{width:56px;height:52px;border:0;border-bottom:.7px solid var(--line);background:#fff;color:#111;cursor:pointer;display:grid;place-items:center}
+.map-controls button:last-child{border-bottom:0}
+.dist-toggle{position:absolute;top:12px;right:76px;display:flex;background:#fff;border:.7px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow);z-index:5}
+.dist-toggle button{border:0;background:#fff;padding:8px 14px;font-size:13px;color:var(--ink);cursor:pointer;white-space:nowrap}
+.dist-toggle button[aria-pressed="true"]{background:var(--blue);color:#fff;font-weight:600}
+.map-legend-panel{position:absolute;left:12px;top:12px;width:148px;background:#fff;border:.7px solid var(--line);border-radius:9px;box-shadow:var(--shadow);padding:12px 10px 10px;font-size:11px}
+.map-legend-panel b{display:block;font-size:12px;font-weight:400;margin:0 0 8px}
+.map-legend-panel ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.map-legend-panel li{display:flex;align-items:center;gap:8px}
+.map-legend-panel hr{border:0;border-top:1px solid #d9d9d9;margin:8px 0}
+.outlet-master,.outlet-type-toggle{display:flex;align-items:center;gap:6px;min-height:24px;margin:0;cursor:pointer}
+.outlet-master{margin:0 0 8px;font-weight:650;color:#111}
+.outlet-master input,.outlet-type-toggle input{width:14px;height:14px;margin:0;flex:none;accent-color:var(--blue)}
+.outlet-type-toggle{width:100%}
+.outlet-type-list.is-inert{opacity:.45}
+.outlet-legend-note{margin:8px 0 0;font-size:9.5px;line-height:1.4;color:rgba(0,0,0,.61)}
+.map-cta{position:absolute;right:24px;bottom:16px;display:inline-flex;align-items:center;height:53px;padding:0 22px;border:.7px solid var(--line);border-radius:9px;background:#fff;box-shadow:var(--shadow);font-size:20px;font-weight:500;cursor:pointer}
+#overview-map-slot #legend,.view-analysis .map-legend-panel,.view-analysis .map-cta{display:none}
+.view-analysis #legend{display:flex}
+.legend{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 110px);background:rgba(255,255,255,.95);padding:9px 11px;border-radius:9px;border:1px solid var(--line);display:flex;gap:13px;flex-wrap:wrap;font-size:10.5px;box-shadow:0 3px 12px rgba(16,42,67,.06)}
+.legend-group{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.legend-title{font-weight:900;color:#33495b}
+.legend span{white-space:nowrap}
+.size-dot{display:inline-flex;border:1.5px solid #526574;border-radius:50%;vertical-align:middle;margin-right:4px;background:rgba(82,101,116,.08)}
+.line-key{display:inline-block;width:22px;border-top:3px solid;vertical-align:3px;margin-right:4px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.diag-list{display:grid;gap:12px}
+.diag-card{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:24px;align-items:center;min-height:91px;padding:14px 16px;border:.7px solid var(--line);border-radius:12px}
+.diag-card h3{margin:0;font-size:18px;font-weight:650}
+.diag-card p{margin:4px 0 0;font-size:13px}
+.diag-count{text-align:right}
+.diag-count b{display:block;font-size:24px;font-weight:500}
+.diag-count b span{font-size:14px;font-weight:400}
+.diag-count small{display:block;font-size:13px;color:#111}
+.diag-card.weak b{color:#ED1C20}
+.diag-card.watch b{color:#F1790F}
+.diag-card.ok b{color:#0DB437}
+.diag-note{display:flex;align-items:flex-start;gap:12px;margin-top:13px;padding:8px 12px;background:rgba(224,224,224,.55);border-radius:7px;font-size:11px;line-height:1.5}
+.ops-panel{padding:16px 16px 18px}
+.ops-panel h2{margin:0 0 8px;font-size:20px;font-weight:650}
+.ops-panel h2 small{margin-left:8px;font-size:15px;font-weight:500;opacity:.7}
+.ops-scope{margin:0 0 12px;font-size:13px;line-height:1.45;color:rgba(0,0,0,.66)}
+.ops-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));min-height:130px;border:.7px solid var(--line);border-radius:9px;box-shadow:var(--shadow);background:#fff}
+.ops-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px 8px;text-align:center;border-right:.57px solid #d9d9d9}
+.ops-cell:last-child{border-right:0}
+.ops-cell .lbl{font-size:15px}
+.ops-cell .val{font-size:24px;font-weight:500}
+.ops-cell .val span{font-size:12px;font-weight:400}
+.ops-cell .sub{font-size:15px}
+.source-bar{display:flex;align-items:center;gap:18px;margin-top:14px;min-height:42px;padding:0 16px;background:rgba(140,140,140,.1);border:.7px solid var(--line);border-radius:12px;box-shadow:var(--shadow);font-size:16px}
+.source-bar b{font-size:17px;font-weight:500}
+.source-bar span+span{padding-left:18px;border-left:1px solid #c5c5c5}
+.field{display:grid;gap:6px;min-width:140px}
+.field label{font-size:13px;font-weight:650;color:rgba(0,0,0,.66)}
+.field select,.field>input,.zone-combo-button{height:40px;border:.7px solid var(--line);border-radius:8px;background:#fff;padding:0 10px}
+.zone-combo{position:relative;min-width:150px}
+.zone-combo-button{position:relative;display:block;width:100%;padding:0 28px 0 10px;text-align:left;cursor:pointer;color:inherit;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-appearance:none;appearance:none}
+.zone-combo-button::after{content:"";position:absolute;right:12px;top:50%;width:0;height:0;margin-top:-2px;border:4px solid transparent;border-top-color:#455565;pointer-events:none}
+.zone-combo-panel{position:absolute;z-index:30;top:calc(100% + 4px);left:0;min-width:100%;width:max(100%,200px);max-width:min(280px,90vw);max-height:280px;overflow:auto;background:#fff;border:.7px solid var(--line);border-radius:8px;box-shadow:var(--shadow);padding:6px}
+.zone-option{display:flex;align-items:center;gap:8px;min-height:28px;padding:4px 6px;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer}
+.zone-option:hover,.zone-option:focus-within{background:#eaf4fb}
+.zone-option input{width:14px;height:14px;margin:0;flex:none;accent-color:var(--blue)}
+.zone-option-all{margin-bottom:4px;padding-bottom:8px;border-bottom:1px solid var(--line);font-weight:700}
+.filter-panel{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:end;margin-bottom:16px}
+.filter-panel .field{flex:0 1 180px}
+.filter-checks{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;padding:8px 0 2px}
+.layer-toggle{display:inline-flex;align-items:center;gap:6px;color:rgba(0,0,0,.75);font-size:14px;font-weight:500;cursor:pointer}
+.layer-toggle input{accent-color:var(--blue);width:15px;height:15px}
+.filter-actions{display:flex;gap:8px;margin-left:auto;align-items:center}
+.ghost-btn,.primary-btn{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border-radius:8px;font-size:14px;font-weight:650;cursor:pointer}
+.ghost-btn{border:.7px solid var(--line);background:#fff;color:#111;box-shadow:var(--shadow)}
+.primary-btn{border:0;background:var(--blue);color:#fff}
+.encoding-note{width:100%;color:rgba(0,0,0,.5);font-size:12px}
+.analysis-map-wrap{position:relative;padding:12px}
+.view-analysis .mapbox,.view-analysis #map{min-height:590px;height:590px;border-radius:8px}
+.map-caption{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:8px 4px 16px;color:rgba(0,0,0,.55);font-size:12px}
+.route-summary{font-weight:650;color:#405465}
+.detail{position:absolute;right:88px;top:24px;z-index:6;width:min(320px,calc(100% - 120px));background:#fff;border:.7px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.detail h3{margin:0 0 10px;font-size:18px;font-weight:650;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.stat{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #edf1f4;padding:7px 0;font-size:13px}
+.stat:first-of-type{border:0}
+.stat span{color:rgba(0,0,0,.55)}
+.detail-note{margin:10px 0 0;padding:8px 10px;background:#f8fafc;border-radius:8px;font-size:12px;line-height:1.45;color:rgba(0,0,0,.66)}
+.table-panel{padding:16px 16px 12px}
+.table-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.table-head h2{margin:0;font-size:20px;font-weight:650}
+.table-count{color:rgba(0,0,0,.55);font-size:14px}
+.table-head .ghost-btn{margin-left:auto}
+.access-table-wrap{overflow:auto}
+.access-table{width:100%;min-width:1080px;border-collapse:separate;border-spacing:0;font-size:13px}
+.access-table th,.access-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.access-table th{background:#f8fafc;font-weight:650;color:rgba(0,0,0,.7)}
+.access-table td:nth-child(4),.access-table th:nth-child(4),.access-table td:nth-child(6),.access-table td:nth-child(7){text-align:right}
+.access-table tbody tr{cursor:pointer}
+.access-table tbody tr:hover,.access-table tbody tr.sel{background:#eef5ff}
+.access-table .km-hot{color:#ED1C20;font-weight:650}
+.access-table .km-warm{color:#F1790F;font-weight:650}
+.table-pager{display:flex;justify-content:center;gap:6px;padding:12px 0 4px;flex-wrap:wrap}
+.table-pager button{min-width:32px;height:32px;border:.7px solid var(--line);border-radius:8px;background:#fff;cursor:pointer}
+.table-pager button[aria-current="page"]{border-color:var(--blue);color:var(--blue);font-weight:700}
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700}
+.p1{background:#fae2e2;color:#8c2626}.p2{background:#fff0dc;color:#95570c}.accessible{background:#e4f2e9;color:#236044}.quality_deferred{background:#eee9fa;color:#58478f}
+.visit-yes{background:#e4f2e9;color:#236044}.visit-no{background:#fae2e2;color:#8c2626}.visit-na{background:#f1f5f9;color:#475569}
+.ops-config{margin-bottom:16px}
+.zone-panel h2 small{margin-left:6px;font-size:14px;font-weight:500;color:rgba(0,0,0,.55)}
+.control-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;align-items:end}
+.control-grid .wide{grid-column:auto}
+.control-grid .field{min-width:0}
+.control-grid .field label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px}
+.control-grid .zone-combo-button,.control-grid .field>input,.control-grid .stepper,.control-grid .stepper input,.control-grid .stepper button{height:36px}
+.control-grid .stepper button{width:30px}
+.control-grid .field>input{padding:0 6px}
+.stepper{display:flex;align-items:center;height:40px;border:.7px solid var(--line);border-radius:8px;background:#fff;overflow:hidden}
+.stepper input{flex:1;min-width:0;height:40px;border:0;text-align:center;padding:0 4px}
+.stepper button{width:36px;height:40px;border:0;background:#f8fafc;cursor:pointer;display:grid;place-items:center}
+.stepper button:hover{background:#eef2f6}
+.plan-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.plan-chips{display:none}
+.plan-chips button{height:40px;padding:0 16px;border:.7px solid var(--line);border-radius:8px;background:#fff;font-weight:650;cursor:pointer}
+.plan-chips button[aria-current="true"]{border-color:var(--blue);background:#eef5ff;color:var(--blue)}
+.run{height:44px;padding:0 22px;border:0;border-radius:9px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin-left:auto}
+.run:disabled{opacity:.55;cursor:wait}
+.hint{font-size:12px;color:rgba(0,0,0,.55);margin-top:10px}
+.error{display:none;margin-top:10px;padding:9px;border-radius:8px;background:#fae2e2;color:#8c2626;font-size:12px}
+.error.show{display:block}
+.compare-panel h2,.zone-panel h2,.ops-status h2{margin:0 0 14px;font-size:20px;font-weight:650}
+.compare-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:16px}
+.compare-card{border:.7px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;cursor:pointer;text-align:center}
+.compare-card[aria-current="true"]{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+.compare-card .lbl{font-size:15px;font-weight:650}
+.compare-card .val{margin:8px 0 4px;font-size:28px;font-weight:650}
+.compare-card .pct{font-size:18px;color:rgba(0,0,0,.66)}
+.compare-card .track{height:8px;margin-top:10px;background:#edf1f4;border-radius:99px;overflow:hidden}
+.compare-card .fill{height:100%;background:#8eb8f0;border-radius:99px}
+.compare-card[aria-current="true"] .fill{background:var(--blue)}
+.compare-card.best-card .fill{background:var(--ok)}
+.compare{overflow-x:auto;max-width:100%}
+.scenario-table,.zone-table{border-collapse:separate;border-spacing:0;width:100%;font-size:13px}
+.scenario-table{min-width:720px}
+.scenario-table th,.scenario-table td,.zone-table th,.zone-table td{padding:10px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.scenario-table th:first-child,.scenario-table td:first-child,.zone-table th:first-child,.zone-table td:first-child{text-align:left}
+.scenario-table thead th,.zone-table thead th{background:#eef4f8;font-weight:650}
+.scenario-table tr>*:first-child,.zone-table tr>*:first-child{border-left:1px solid var(--line)}
+.scenario-table thead tr:first-child>*,.zone-table thead tr:first-child>*{border-top:1px solid var(--line)}
+.scenario-note{margin:8px 0 0;font-size:12px;color:rgba(0,0,0,.55)}
+.best{color:#2f9e6a;font-weight:800}
+.alloc-yes{color:var(--blue);font-weight:700}
+.alloc-no{color:#c2410c;font-weight:700}
+.zone-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;margin-bottom:12px}
+.zone-head h2{margin:0}
+.zone-head small{color:rgba(0,0,0,.55);font-size:14px;font-weight:500}
+.zone-legend{display:flex;gap:16px;margin-left:auto;font-size:13px;color:rgba(0,0,0,.7)}
+.zone-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.zone-legend .p1-dot{background:#1769E0}
+.zone-legend .p2-dot{background:#94a3b8}
+.zone-split{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.zone-total{display:grid;grid-template-columns:minmax(140px,1.4fr) 1fr 1fr 1fr;border:1px solid var(--line);background:#eef5ff;border-radius:0 0 10px 10px;font-size:13px;font-weight:700;color:var(--blue)}
+.zone-total span{padding:10px 12px}
+.zone-total .days,.zone-total .p1,.zone-total .p2{text-align:center}
+.ops-status{margin-top:16px}
+.status-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 32px}
+.note-list{margin:0;padding:0;list-style:none;display:grid;gap:0;font-size:13px}
+.note-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #edf1f4}
+.status-chip{display:inline-flex;align-items:center;min-height:22px;padding:0 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}
+.chip-bad{background:#fae2e2;color:#b42318}
+.chip-warn{background:#fff0dc;color:#b54708}
+.chip-mute{background:#eef2f6;color:#475569}
+.chip-info{background:#e8f1ff;color:#1769E0}
+.warn-alert{display:flex;align-items:flex-start;gap:10px;margin-top:16px;padding:12px 16px;background:#FFF4E5;border:1px solid #FF9F64;border-radius:12px;font-size:13px;line-height:1.55;color:#7a4a12}
+.warn-alert b{display:block;margin-bottom:4px}
+.warn-alert p{margin:0}
+.attribution{position:absolute;right:8px;bottom:7px;background:rgba(255,255,255,.84);padding:2px 5px;border-radius:4px;color:#526574;font-size:8.5px}
+#overview-map-slot .attribution{display:none}
+.noscript{padding:20px;background:#fae2e2;color:#8c2626;text-align:center}
+@media(max-width:1200px){.metric-row{grid-template-columns:repeat(3,1fr);gap:12px}.overview-grid,.control-grid,.compare-cards,.zone-split,.status-grid{grid-template-columns:minmax(0,1fr)}.ops-strip{grid-template-columns:repeat(3,1fr)}.ops-cell:nth-child(3){border-right:0}.app-header{flex-wrap:wrap;padding:10px 16px;min-height:0}.top-nav{order:3;width:100%}.page-title{font-size:28px}.filter-actions,.run{margin-left:0}.detail{position:static;width:auto;margin:12px 12px 0}.zone-legend{margin-left:0}}
+@media(max-width:900px){.metric-row{grid-template-columns:repeat(2,1fr)}.ops-strip{grid-template-columns:1fr}.ops-cell{border-right:0;border-bottom:.57px solid #d9d9d9}.ops-cell:last-child{border-bottom:0}.head-actions{padding-top:0}}
+@media(max-width:540px){.metric-card .kpi-value b{font-size:24px}.control-grid{grid-template-columns:1fr}#map,.view-analysis #map{height:auto;aspect-ratio:720/520}.mapbox,.view-analysis .mapbox{min-height:0}.legend{position:static;max-width:none}.map-legend-panel{position:static;width:auto;margin:0 0 8px}.overview-head{flex-wrap:wrap}.head-actions{flex-wrap:wrap;padding-top:0}}
+</style>
+</head>
+<body>
+<noscript><div class="noscript">시나리오 계산을 사용하려면 JavaScript를 활성화하세요.</div></noscript>
+<header class="app-header">
+  <a class="brand" href="#overview">
+    <span class="ico ico-29"><img src="assets/icon-finance.svg" alt="" width="29" height="29"></span>
+    <span class="brand-name">전북 금융 접근성 진단 시스템</span>
+    <span class="demo-badge" title="시범 산출물입니다. 현장 운영·실시간 관제가 아닙니다.">시범 · 비운영</span>
+  </a>
+  <nav class="top-nav" aria-label="화면">
+    <button type="button" data-view="overview" aria-current="page">종합 대시보드</button>
+    <button type="button" data-view="analysis">금융 접근성 분석</button>
+    <button type="button" data-view="scenario">운영 시나리오</button>
+  </nav>
+  <div class="header-actions">
+    <a href="methodology.html"><span class="ico ico-24"><img src="assets/icon-info-filled.svg" alt="" width="24" height="24"></span>사용 가이드</a>
+  </div>
+</header>
+
+<main class="page">
+  <section class="view" id="view-overview">
+    <div class="overview-head">
+      <div>
+        <div class="title-row">
+          <h1 class="page-title">종합 대시보드</h1>
+          <span class="demo-badge" title="시범 산출물입니다. 현장 운영·실시간 관제가 아닙니다.">시범 · 비운영</span>
+        </div>
+        <p class="page-sub">전북 14개 시·군 금융 접근성 시범 현황입니다. 실시간 운영 콘솔이 아닙니다.</p>
+      </div>
+    </div>
+
+    <div class="metric-row">
+      <article class="metric-card">
+        <div class="kpi-top">
+          <span class="kpi-ico">
+            <img class="bg" src="assets/ellipse-kpi.svg" alt="" width="40" height="40">
+            <img class="fg" src="assets/icon-building.svg" alt="" width="27" height="27">
+          </span>
+          <div class="lbl">행정동 수</div>
+        </div>
+        <div class="kpi-value"><b id="m-admin">243</b><span>개</span></div>
+        <div class="kpi-sub"><span id="m-zone">14</span>개 시·군</div>
+      </article>
+      <article class="metric-card">
+        <div class="kpi-top">
+          <span class="kpi-ico">
+            <img class="bg" src="assets/ellipse-kpi.svg" alt="" width="40" height="40">
+            <img class="fg" src="assets/icon-bank.svg" alt="" width="30" height="30">
+          </span>
+          <div class="lbl">금융 접점 수</div>
+        </div>
+        <div class="kpi-value"><b id="m-outlet">643</b><span>곳</span></div>
+        <div class="kpi-sub">분석가용 · 검증 목록 <span id="m-outlet-listed">681</span>곳</div>
+      </article>
+      <article class="metric-card">
+        <div class="kpi-top">
+          <span class="kpi-ico">
+            <img class="bg" src="assets/ellipse-kpi.svg" alt="" width="40" height="40">
+            <img class="fg" src="assets/icon-people.svg" alt="" width="27" height="27">
+          </span>
+          <div class="lbl">65세 이상 주민</div>
+        </div>
+        <div class="kpi-value"><b id="m-senior">470,160</b><span>명</span></div>
+        <div class="kpi-sub">(전북 전체)</div>
+      </article>
+      <article class="metric-card alert-3">
+        <div class="kpi-top">
+          <span class="kpi-ico">
+            <img class="bg" src="assets/ellipse-kpi-orange.svg" alt="" width="40" height="40">
+            <img class="fg" src="assets/icon-location-orange.svg" alt="" width="32" height="32">
+          </span>
+          <div class="lbl">대표점 기준 3km 초과</div>
+        </div>
+        <div class="kpi-value"><b id="m-over3">71</b><span>개 행정동</span></div>
+        <div class="kpi-sub">(전체의 <span id="m-over3-pct">29.2%</span>)</div>
+      </article>
+      <article class="metric-card alert-5">
+        <div class="kpi-top">
+          <span class="kpi-ico">
+            <img class="bg" src="assets/ellipse-kpi-red.svg" alt="" width="40" height="40">
+            <img class="fg" src="assets/icon-location-red.svg" alt="" width="32" height="32">
+          </span>
+          <div class="lbl">대표점 기준 5km 초과</div>
+        </div>
+        <div class="kpi-value"><b id="m-over5">27</b><span>개 행정동</span></div>
+        <div class="kpi-sub">(전체의 <span id="m-over5-pct">11.1%</span>)</div>
+      </article>
+    </div>
+
+    <div class="overview-grid">
+      <div class="panel" id="overview-map-slot">
+        <div class="panel-head">
+          <h2>전북 전체 금융 접근성 현황</h2>
+          <span class="ico ico-20"><img src="assets/icon-info-outlined.svg" alt="" width="20" height="19"></span>
+        </div>
+        <div class="map-host" id="overview-map-host">
+          <div class="mapbox">
+            <svg id="map" viewBox="0 0 720 520" role="img" aria-label="전북 243개 행정동 대표점 도로거리 색상 지도"></svg>
+            <aside class="map-legend-panel">
+              <b>대표점 기준 도로거리</b>
+              <ul>
+                <li><span class="ico ico-15"><img src="assets/circle-dist-5.svg" alt="" width="15" height="15"></span>5km 초과</li>
+                <li><span class="ico ico-15"><img src="assets/circle-dist-3-5.svg" alt="" width="15" height="15"></span>3 ~ 5km</li>
+                <li><span class="ico ico-15"><img src="assets/circle-dist-1-3.svg" alt="" width="15" height="15"></span>1 ~ 3km</li>
+                <li><span class="ico ico-15"><img src="assets/circle-dist-1.svg" alt="" width="15" height="15"></span>1km 이하</li>
+              </ul>
+              <hr>
+              <label class="outlet-master"><input id="outlet-layer" type="checkbox">접점 표시</label>
+              <b id="outlet-type-heading">금융 접점 종류</b>
+              <ul class="outlet-type-list is-inert" role="group" aria-labelledby="outlet-type-heading">
+                <li><label class="outlet-type-toggle"><input type="checkbox" name="outlet-type" value="우체국" checked disabled><span class="ico ico-14"><img src="assets/circle-type-post.svg" alt="" width="14" height="14"></span>우체국</label></li>
+                <li><label class="outlet-type-toggle"><input type="checkbox" name="outlet-type" value="은행" checked disabled><span class="ico ico-14"><img src="assets/circle-type-bank.svg" alt="" width="14" height="14"></span>은행</label></li>
+                <li><label class="outlet-type-toggle"><input type="checkbox" name="outlet-type" value="새마을금고" checked disabled><span class="ico ico-14"><img src="assets/circle-type-kfcc.svg" alt="" width="14" height="14"></span>새마을금고</label></li>
+                <li><label class="outlet-type-toggle"><input type="checkbox" name="outlet-type" value="신협" checked disabled><span class="ico ico-11"><img src="assets/circle-type-cu.svg" alt="" width="11" height="11"></span>신협</label></li>
+              </ul>
+              <p class="outlet-legend-note">기본은 도로거리 색이고, 접점은 켜서 겹쳐 봅니다.</p>
+            </aside>
+            <div class="map-controls" aria-label="지도 확대 축소">
+              <button id="zoom-in" type="button" aria-label="지도 확대"><span class="ico ico-24"><img src="assets/icon-add.svg" alt="" width="24" height="24"></span></button>
+              <button id="zoom-out" type="button" aria-label="지도 축소"><span class="ico ico-24"><img src="assets/icon-remove.svg" alt="" width="24" height="24"></span></button>
+            </div>
+            <div class="dist-toggle" id="dist-toggle" role="group" aria-label="거리 기준 선택" hidden>
+              <button type="button" data-mode="line" aria-pressed="false">직선 거리</button>
+              <button type="button" data-mode="road" aria-pressed="true">실제 도로 거리</button>
+            </div>
+            <button class="map-cta" id="to-analysis" type="button">상세 분석 보기  →</button>
+            <div class="legend" id="legend"></div>
+            <div class="attribution">경계 SGIS · 도로/경로 © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a></div>
+          </div>
+        </div>
+      </div>
+      <aside class="panel">
+        <div class="panel-head"><h2>접근성 진단 요약</h2></div>
+        <div class="diag-list">
+          <div class="diag-card weak">
+            <span class="ico ico-27"><img src="assets/icon-caution.svg" alt="" width="27" height="27"></span>
+            <div><h3>접근 취약</h3><p>대표점 기준 5km 초과</p></div>
+            <div class="diag-count"><b><span id="m-weak">27</span><span>개 행정동</span></b><small>전체의 <span id="m-weak-pct">11.1%</span></small></div>
+          </div>
+          <div class="diag-card watch">
+            <span class="ico ico-27"><img src="assets/icon-caution-2.svg" alt="" width="27" height="27"></span>
+            <div><h3>접근 주의</h3><p>대표점 기준 3 ~ 5km</p></div>
+            <div class="diag-count"><b><span id="m-watch">44</span><span>개 행정동</span></b><small>전체의 <span id="m-watch-pct">18.1%</span></small></div>
+          </div>
+          <div class="diag-card ok">
+            <span class="ico ico-27"><img src="assets/icon-check.svg" alt="" width="27" height="27"></span>
+            <div><h3>상대적 양호</h3><p>대표점 기준 3km 이내</p></div>
+            <div class="diag-count"><b><span id="m-ok">172</span><span>개 행정동</span></b><small>전체의 <span id="m-ok-pct">70.8%</span></small></div>
+          </div>
+        </div>
+        <div class="diag-note">
+          <span class="ico ico-24"><img src="assets/icon-info-outlined.svg" alt="" width="21" height="24"></span>
+          <span>행정동 대표점과 최근점 금융 접점 간 도로거리를 기준으로 산출합니다.<br>주민 개인의 실제 이동거리를 의미하지 않습니다.</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="panel ops-panel">
+      <h2>기본 운영안 요약 <small>(경로대상)</small></h2>
+      <p class="ops-scope">진단은 대표점 도로거리이고, 운영안은 품질유보 2곳을 제외한 경로대상입니다. 취약 27곳을 모두 방문한다는 뜻이 아닙니다.</p>
+      <div class="ops-strip">
+        <div class="ops-cell"><div class="lbl">전체 방문 대상 행정동</div><div class="val"><span id="ops-targets">69</span><span>개</span></div></div>
+        <div class="ops-cell"><div class="lbl">방문 가능 행정동 (기본안)</div><div class="val"><span id="ops-covered">57</span><span>개</span></div><div class="sub">(<span id="ops-covered-pct">83</span>%)</div></div>
+        <div class="ops-cell"><div class="lbl">P1 방문 (경로대상)</div><div class="val"><span id="ops-p1">26 / 26</span><span>개</span></div><div class="sub">(<span id="ops-p1-pct">100</span>%)</div></div>
+        <div class="ops-cell"><div class="lbl">P2 방문 (경로대상)</div><div class="val"><span id="ops-p2">31 / 43</span><span>개</span></div><div class="sub">(<span id="ops-p2-pct">72</span>%)</div></div>
+        <div class="ops-cell"><div class="lbl">총 경로일</div><div class="val"><span id="ops-days">15</span><span>경로일</span></div></div>
+        <div class="ops-cell"><div class="lbl">이동거리 (추정)</div><div class="val"><span id="ops-km">1,056</span><span> km</span></div><div class="sub">(<span id="ops-time">26시간 23분</span> · <span id="ops-speed">40</span>km/h 가정)</div></div>
+      </div>
+    </div>
+
+    <div class="source-bar">
+      <span class="ico ico-24"><img src="assets/icon-barchart.svg" alt="" width="24" height="24"></span>
+      <b>데이터 기준</b>
+      <span>행정동: <span id="src-admin-date">2026. 07</span> 기준 (<span id="src-admin-count">243</span>개)</span>
+      <span>금융 접점: 분석가용 <span id="src-outlet-count">643</span>곳 (검증 목록 전체 <span id="src-outlet-listed">681</span>곳) · 원천 기준 <span id="src-outlet-date">2025. 03</span>~ · 수집 <span id="src-outlet-retrieved">2026. 08</span></span>
+      <span>65세 이상 인구: <span id="src-senior-date">2026. 06</span> 기준</span>
+    </div>
+  </section>
+
+  <section class="view view-analysis" id="view-analysis" hidden>
+    <div class="overview-head">
+      <div>
+        <h1 class="page-title">금융 접근성 분석</h1>
+        <p class="page-sub">행정동별 금융 접점까지 실제 도로거리를 확인하고 접근 취약 지역을 식별합니다.</p>
+      </div>
+    </div>
+    <div class="panel filter-panel">
+      <div class="field"><label id="zone-filter-label" for="zone-filter-button">시·군 필터</label>
+        <div class="zone-combo" id="zone-filter">
+          <button type="button" class="zone-combo-button" id="zone-filter-button" aria-haspopup="true" aria-expanded="false" aria-controls="zone-filter-panel" aria-labelledby="zone-filter-label zone-filter-button">전북 전체</button>
+          <div class="zone-combo-panel" id="zone-filter-panel" hidden role="group" aria-labelledby="zone-filter-label"></div>
+        </div>
+      </div>
+      <div class="field"><label for="metric-filter">점 색상</label><select id="metric-filter"><option value="priority">정책 우선순위</option><option value="distance" selected>도로거리 구간</option><option value="typology">취약유형</option></select></div>
+      <div class="field"><label for="size-filter">점 크기</label><select id="size-filter"><option value="elderly_population">65세 이상 인구</option><option value="elderly_ratio">고령인구 비율</option><option value="road_distance">도로거리</option><option value="fixed">동일 크기</option></select></div>
+      <div class="field"><label for="route-day-filter">경로 표시점</label><select id="route-day-filter"><option value="all">운영주기 전체</option></select></div>
+      <div class="filter-checks" aria-label="지도 레이어">
+        <label class="layer-toggle"><input id="layer-roads" type="checkbox" checked> 주요도로</label>
+        <label class="layer-toggle"><input id="layer-routes" type="checkbox" checked> 차량 경로</label>
+        <label class="layer-toggle"><input id="layer-nodes" type="checkbox"> 경로 도로노드</label>
+        <label class="layer-toggle"><input id="layer-labels" type="checkbox" checked> 시·군명</label>
+      </div>
+      <div class="filter-actions">
+        <button class="ghost-btn" id="reset-filters" type="button"><span class="ico ico-20"><img src="assets/icon-refresh.svg" alt="" width="20" height="20"></span>필터 초기화</button>
+        <button class="primary-btn" id="download-access" type="button">데이터 다운로드</button>
+      </div>
+      <span class="encoding-note" id="encoding-note"></span>
+    </div>
+    <div class="panel analysis-map-wrap">
+      <div class="map-host" id="analysis-map-slot"></div>
+      <aside class="detail" id="detail"></aside>
+    </div>
+    <div class="map-caption"><span id="route-summary" class="route-summary"></span><span>휠·버튼으로 확대, 드래그로 이동</span></div>
+    <div class="panel table-panel">
+      <div class="table-head">
+        <h2>행정동별 접근성 현황</h2>
+        <span class="table-count">총 <span id="access-count">0</span>건</span>
+        <button class="ghost-btn" id="download-table" type="button">엑셀 다운로드</button>
+      </div>
+      <div class="access-table-wrap">
+        <table class="access-table" id="access-table">
+          <thead>
+            <tr>
+              <th>순위</th><th>시·군</th><th>행정동</th><th>도로거리</th><th>3km 내 접점</th>
+              <th>65세 이상 인구</th><th>65세 이상 비율</th><th>취약유형</th><th>우선순위</th><th>운영주기 내 방문</th><th>비고</th>
+            </tr>
+          </thead>
+          <tbody id="access-rows"></tbody>
+        </table>
+      </div>
+      <div class="table-pager" id="access-pager"></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-scenario" hidden>
+    <div class="overview-head">
+      <div>
+        <h1 class="page-title">운영 시나리오</h1>
+        <p class="page-sub">선택한 운영 조건으로 방문 범위와 경로일을 비교합니다. 현장 배차가 아닙니다.</p>
+      </div>
+    </div>
+    <form class="panel ops-config" id="scenario-form" novalidate>
+      <h2>운영 조건 설정</h2>
+      <div class="control-grid">
+        <div class="field wide"><label id="scenario-zone-filter-label" for="scenario-zone-filter-button">시·군 필터</label>
+          <div class="zone-combo" id="scenario-zone-filter">
+            <button type="button" class="zone-combo-button" id="scenario-zone-filter-button" aria-haspopup="true" aria-expanded="false" aria-controls="scenario-zone-filter-panel" aria-labelledby="scenario-zone-filter-label scenario-zone-filter-button">전북 전체</button>
+            <div class="zone-combo-panel" id="scenario-zone-filter-panel" hidden role="group" aria-labelledby="scenario-zone-filter-label"></div>
+          </div>
+        </div>
+        <div class="field"><label for="vehicle-count">차량 수</label>
+          <div class="stepper"><button type="button" data-step-for="vehicle-count" data-step="-1" aria-label="차량 수 감소"><span class="ico ico-20"><img src="assets/icon-remove.svg" alt="" width="20" height="20"></span></button><input id="vehicle-count" name="vehicle_count" type="number" required><button type="button" data-step-for="vehicle-count" data-step="1" aria-label="차량 수 증가"><span class="ico ico-20"><img src="assets/icon-add.svg" alt="" width="20" height="20"></span></button></div>
+        </div>
+        <div class="field"><label for="operating-days">주간 운영일</label>
+          <div class="stepper"><button type="button" data-step-for="operating-days" data-step="-1" aria-label="운영일 감소"><span class="ico ico-20"><img src="assets/icon-remove.svg" alt="" width="20" height="20"></span></button><input id="operating-days" name="operating_days_per_cycle" type="number" required><button type="button" data-step-for="operating-days" data-step="1" aria-label="운영일 증가"><span class="ico ico-20"><img src="assets/icon-add.svg" alt="" width="20" height="20"></span></button></div>
+        </div>
+        <div class="field"><label for="operating-start">운영 시작</label><input id="operating-start" name="operating_start" type="time" required></div>
+        <div class="field"><label for="operating-end">운영 종료</label><input id="operating-end" name="operating_end" type="time" required></div>
+        <div class="field"><label for="service-minutes">장소당 서비스</label>
+          <div class="stepper"><button type="button" data-step-for="service-minutes" data-step="-1" aria-label="서비스 시간 감소"><span class="ico ico-20"><img src="assets/icon-remove.svg" alt="" width="20" height="20"></span></button><input id="service-minutes" name="service_minutes" type="number" required><button type="button" data-step-for="service-minutes" data-step="1" aria-label="서비스 시간 증가"><span class="ico ico-20"><img src="assets/icon-add.svg" alt="" width="20" height="20"></span></button></div>
+        </div>
+        <div class="field"><label for="max-stops">1일 최대 방문</label>
+          <div class="stepper"><button type="button" data-step-for="max-stops" data-step="-1" aria-label="방문 수 감소"><span class="ico ico-20"><img src="assets/icon-remove.svg" alt="" width="20" height="20"></span></button><input id="max-stops" name="max_stops_per_route" type="number" required><button type="button" data-step-for="max-stops" data-step="1" aria-label="방문 수 증가"><span class="ico ico-20"><img src="assets/icon-add.svg" alt="" width="20" height="20"></span></button></div>
+        </div>
+        <div class="field"><label for="service-cycle">서비스 주기 (일)</label>
+          <div class="stepper"><button type="button" data-step-for="service-cycle" data-step="-1" aria-label="서비스 주기 감소"><span class="ico ico-20"><img src="assets/icon-remove.svg" alt="" width="20" height="20"></span></button><input id="service-cycle" name="service_cycle_days" type="number" required><button type="button" data-step-for="service-cycle" data-step="1" aria-label="서비스 주기 증가"><span class="ico ico-20"><img src="assets/icon-add.svg" alt="" width="20" height="20"></span></button></div>
+        </div>
+      </div>
+      <div class="plan-row">
+        <div class="plan-chips" id="plan-chips"></div>
+        <select id="preset-select" hidden><option value="custom">사용자 입력안</option></select>
+        <button class="run" type="submit" id="run-button">새 시나리오 계산</button>
+        <button class="ghost-btn" type="button" id="reset-inputs"><span class="ico ico-20"><img src="assets/icon-refresh.svg" alt="" width="20" height="20"></span>입력 초기화</button>
+      </div>
+      <p class="hint">시·군을 고르면 그 범위의 경로대상만 다시 배정합니다. 일부 시·군 결과는 전북 전체 기본안을 대체하지 않습니다.</p>
+      <div class="error" id="form-error" role="alert"></div>
+    </form>
+    <div class="panel compare-panel">
+      <h2>시나리오 비교 결과</h2>
+      <div class="compare-cards" id="coverage-bars"></div>
+      <div class="compare"><table class="scenario-table" id="scenario-table"></table></div>
+      <p class="scenario-note" id="scenario-note"></p>
+    </div>
+    <div class="panel zone-panel">
+      <div class="zone-head">
+        <h2 id="zone-title">14개 시·군 경로일 배정 결과</h2>
+        <small id="zone-plan-label"></small>
+        <div class="zone-legend" id="zone-legend"></div>
+      </div>
+      <div class="zone-split" id="zone-list"></div>
+      <div class="zone-total" id="zone-total"></div>
+    </div>
+    <div class="panel ops-status">
+      <h2>운영 상태 및 주요 확인사항</h2>
+      <div class="status-grid">
+        <ul class="note-list">
+          <li><span>실제 교통시간</span><span class="status-chip chip-bad">미반영</span></li>
+          <li><span>시·군 간 재배치</span><span class="status-chip chip-bad">미배정</span></li>
+          <li><span>차고지/출발지 승인 상태</span><span class="status-chip chip-bad">미승인</span></li>
+          <li><span>경로당 장소 승인 상태</span><span class="status-chip chip-bad">미확정</span></li>
+        </ul>
+        <ul class="note-list">
+          <li><span>시간창 출처</span><span class="status-chip chip-warn">운영 가정값</span></li>
+          <li><span>품질유보 대상</span><span class="status-chip chip-mute" id="deferred-chip">2개</span></li>
+          <li><span>status</span><span class="status-chip chip-info" id="status-chip">demonstration_not_operational</span></li>
+          <li><span>operational_ready</span><span class="status-chip chip-bad" id="ready-chip">false</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="warn-alert">
+      <span class="ico ico-24"><img src="assets/icon-caution-2.svg" alt="" width="24" height="24"></span>
+      <div>
+        <b>시연 결과 안내</b>
+        <p id="fairness-warning"></p>
+      </div>
+    </div>
+  </section>
+  <span id="m-target-label" hidden></span>
+  <span id="m-outlet-listed-analysis" hidden></span>
+  <span id="m-road-primary" hidden></span>
+  <span id="m-road-total" hidden></span>
+  <span id="m-road-primary-copy" hidden></span>
+  <span id="m-road-nonprimary" hidden></span>
+  <span id="m-route-deferred" hidden></span>
+  <span id="analysis-date" hidden></span>
+</main>
+<span id="m-threshold" hidden></span>
+<span id="m-target" hidden></span>
+<script src="data.js"></script>
+<script src="map-data.js"></script>
+<script src="scenario-engine.js"></script>
+<script src="app.js?v=p28"></script>
+</body>
+</html>

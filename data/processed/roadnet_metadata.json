@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-08-11T21:01:51+09:00",
+  "pbf": "data/raw/south-korea-latest.osm.pbf",
+  "pbf_md5": "9269d6a6df9c7053fe3aeb31fcf41da2",
+  "bbox_min_lat_max_lat_min_lon_max_lon": [
+    35.049197152107396,
+    36.406419564095806,
+    125.71650703675944,
+    128.1614665190962
+  ],
+  "active_nodes": 1841389,
+  "directed_reverse_edges": 3663915,
+  "components_removed": 0,
+  "drivable_highways": [
+    "living_street",
+    "motorway",
+    "motorway_link",
+    "primary",
+    "primary_link",
+    "residential",
+    "road",
+    "secondary",
+    "secondary_link",
+    "service",
+    "tertiary",
+    "tertiary_link",
+    "trunk",
+    "trunk_link",
+    "unclassified"
+  ],
+  "oneway_respected": true,
+  "blocked_access_values": [
+    "no",
+    "private"
+  ],
+  "max_snap_km": 2.0,
+  "eligible_outlets": 643,
+  "snapped_outlets": 643,
+  "outlet_road_attachments": 643,
+  "outlet_snap_failures": [],
+  "admin_points": 243,
+  "snapped_admin_points": 243,
+  "routed_admin_points": 243,
+  "primary_admin_points": 239,
+  "fallback_admin_points": 4,
+  "unrouted_admin_points": 0,
+  "dijkstra_heap_pops": 1809333,
+  "candidate_limit": null,
+  "cutoff_km": null,
+  "distance_definition": "admin snap leg + directed OSM network + outlet snap leg",
+  "population_exposure_valid": false
+}

@@ -1,0 +1,22 @@
+{
+  "source": "한국은행 경제통계시스템 ECOS StatisticSearch",
+  "source_docs_url": "https://ecos.bok.or.kr/api/",
+  "request_url": "https://ecos.bok.or.kr/api/StatisticSearch/sample/json/kr/1/10/141Y003/M/202508/202605/200000/Q00",
+  "retrieved_on": "2026-08-13",
+  "public_sample_key": true,
+  "query": {
+    "stat_code": "141Y003",
+    "cycle": "M",
+    "start": "202508",
+    "end": "202605",
+    "item_code": "200000",
+    "region_code": "Q00",
+    "item_order": [
+      "account_item",
+      "region"
+    ]
+  },
+  "row_count": 10,
+  "usage": "competition-required context evidence; not a model input",
+  "output_file": "data/processed/ecos_jeonbuk_loans_202508_202605.csv"
+}

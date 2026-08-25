@@ -1,0 +1,72 @@
+﻿check,status,observed,expected
+raw_outlet_count,PASS,681,681
+raw_type_counts,PASS,"{'우체국': 242, '은행': 175, '신협': 128, '새마을금고': 136}","{'우체국': 242, '은행': 175, '신협': 128, '새마을금고': 136}"
+raw_outlet_id_unique,PASS,681,681
+raw_exact_key_unique,PASS,681,681
+source_snapshot_complete,PASS,681,681
+source_correction_ledger,PASS,1/1/전북특별자치도 완주군 이서면 안전로 163,1/1/전북특별자치도 완주군 이서면 안전로 163
+geocode_partition,PASS,681+0,681
+no_admin_center_fallback,PASS,0,0
+all_geocodes_inside_admin,PASS,681,681
+admin_conflicts_flagged,PASS,"[('NH농협은행 전북혁신도시지점', 'verified_address_boundary_conflict')]",one verified address/boundary conflict
+geocode_id_partition,PASS,681,681
+validated_outlets_preserve_geocoded,PASS,681,681
+eligible_outlet_count,PASS,643,643
+cluster_membership_total,PASS,681,681
+cluster_id_assigned,PASS,681,681
+reverse_audit_required_cases,PASS,5,5
+reverse_audit_addresses_present,PASS,60,60
+reverse_audit_status_consistent,PASS,"Counter({'PASS': 59, 'REVIEW': 1})",PASS iff sigungu matches
+admin_access_count,PASS,243,243
+admin_code_unique,PASS,243,243
+population_65plus_total,PASS,470160,470160
+population_exposure_guard,PASS,243,243
+road_row_count,PASS,243,243
+road_status_explicit,PASS,"['fallback_nearest_reachable', 'ok']","['admin_snap_failed', 'fallback_nearest_reachable', 'no_directed_path_to_eligible_outlet', 'ok']"
+road_all_outlet_algorithm,PASS,1,1
+road_no_candidate_cutoff,PASS,None/None,None/None
+road_keeps_components,PASS,0,0
+road_pbf_md5,PASS,9269d6a6df9c7053fe3aeb31fcf41da2,9269d6a6df9c7053fe3aeb31fcf41da2
+road_oneway,PASS,True,True
+road_numeric_coverage,PASS,243,243
+road_primary_flag,PASS,239,239
+road_fallback_disclosed,PASS,4,4
+road_component_sum,PASS,[],none
+road_not_shorter_than_direct,PASS,[],none
+typology_row_count,PASS,243,243
+typology_code_partition,PASS,243,243
+typology_input_hash,PASS,2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b,2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b
+typology_model_or_fallback_gate,PASS,"selected=2, clusters=2","accepted model matches output, or rejected model emits rule-only fallback"
+typology_preprocessing_sensitivity,PASS,"ARI=0.778591, clusters=2",adoption gate passes and strongest passing model is selected
+typology_mixed_distance_features_disclosed,PASS,"{'road_km': '행정동 대표점에서 최근접 분석가용 금융접점까지 OSM 방향성 도로거리', 'cnt_3km': '행정동 대표점에서 직선거리 3km 이내 분석가용 금융접점 수', 'ratio_65plus': '행정동 주민등록인구 중 65세 이상 비율'}",road_km is network distance; cnt_3km is straight-line count
+typology_fit_scope,PASS,155,155
+typology_fallback_unassigned,PASS,4,4
+typology_rule_fallback,PASS,"rural=159, urban=0","rural=159, urban=0"
+jeonbuk_venue_source_partition,PASS,6856+24,6880
+jeonbuk_venue_id_unique,PASS,6856,6856
+jeonbuk_venue_province_coverage,PASS,"cities=14, admins=243, matched=6854","14 cities, 243 admins, 6854 source/boundary matches"
+jeonbuk_venue_operational_guard,PASS,6856,every venue unverified / no source time window
+jeonbuk_venue_privacy_contract,PASS,"['addr', 'candidate_lat', 'candidate_lon', 'coord_admin_code', 'coord_dong', 'coord_sigungu', 'data_base_date', 'fail_reason', 'geo_matched', 'geocode_method', 'geocode_query', 'lat', 'lon', 'name', 'source_sigungu', 'source_sigungu_match', 'time_window_status', 'use_approval_status', 'venue_id', 'venue_type']",official source and published outputs contain no phone field
+route_scenario_input_hashes,PASS,"{'access_road_sha256': '2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b', 'access_typology_sha256': '9710048eecb3dcea547922db7610b725362920f208be22fd4ae251292647830a', 'venues_jeonbuk_sha256': '9373e79f56ece4a2260bd573738575b9ac3c2cc6327432dcd2ac8ce34f2e74e8', 'outlets_validated_sha256': '04fc53933a80bce09e0d74b4d42d2a1f7cd8b3c7c2122f02e3c34d429a92bca4', 'scenario_config_sha256': '9269d93112e04a722e8e6b5ab4c05b34b528529cf047cb939f636712d6e838b1'}","{'access_road_sha256': '2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b', 'access_typology_sha256': '9710048eecb3dcea547922db7610b725362920f208be22fd4ae251292647830a', 'venues_jeonbuk_sha256': '9373e79f56ece4a2260bd573738575b9ac3c2cc6327432dcd2ac8ce34f2e74e8', 'outlets_validated_sha256': '04fc53933a80bce09e0d74b4d42d2a1f7cd8b3c7c2122f02e3c34d429a92bca4', 'scenario_config_sha256': '9269d93112e04a722e8e6b5ab4c05b34b528529cf047cb939f636712d6e838b1'}"
+route_scenario_matrix_complete,PASS,83,complete directed matrix within every service zone
+route_scenario_scope,PASS,"{'analysis_admin_count': 243, 'analysis_service_zone_count': 14, 'threshold_target_count': 71, 'route_eligible_target_count': 69, 'route_quality_deferred_count': 2, 'candidate_count': 69}","243 admins, 14 zones, 71 threshold, 69 route targets/candidates, 2 deferred"
+route_scenario_deterministic_recompute,PASS,57,57
+route_scenario_priority_improvement,PASS,"{'P1': 4, 'P2': -4}",P1 +4 and all 26 eligible P1 covered at total coverage 57
+route_scenario_zone_fairness,PASS,"[('고창군', 1), ('군산시', 1), ('김제시', 1), ('남원시', 1), ('무주군', 1), ('부안군', 1), ('순창군', 1), ('완주군', 2), ('익산시', 1), ('임실군', 1), ('장수군', 1), ('전주시', 1), ('정읍시', 1), ('진안군', 1)]",all 14 zones receive at least one of 15 route-days
+route_scenario_attachment_quality,PASS,"nodes=83, fallbacks=[{'node_id': 'JSC-030DD01E4DBA', 'osm_node_index': 667098, 'connector_km': 0.045744, 'snap_strategy': 'nearest_mutually_reachable_node_fallback'}]",83 nodes; one disclosed mutually-reachable fallback below 0.05km
+route_scenario_operational_guard,PASS,demonstration_not_operational,demonstration only; depot/traffic/repositioning not operationally verified
+route_scenario_measurement_contract,PASS,"{'covered_target_count_meaning': 'visited administrative representative-point target count', 'resident_coverage_available': False, 'population_exposure_valid': False, 'candidate_location_optimization_performed': False, 'candidate_count_per_target': 1, 'every_candidate_serves_exactly_one_target': True, 'required_upgrade_for_resident_coverage': 'resident-level or 100m/500m age-grid origins with the same road-access model'}",visits are admin-target proxies; no resident coverage or location optimization
+route_scenario_temporal_access,PASS,"{'service_cycle_days': 7, 'operating_days_per_cycle': 5, 'route_day_capacity': 15, 'covered_target_max_wait_days_upper_bound': 7, 'unvisited_targets_have_scheduled_service': False}",3 vehicles x 5 days in a 7-day cycle; unvisited targets remain unscheduled
+scenario_evidence_input_hashes,PASS,"{'access_road_sha256': '2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b', 'outlets_validated_sha256': '04fc53933a80bce09e0d74b4d42d2a1f7cd8b3c7c2122f02e3c34d429a92bca4', 'jeonbuk_route_scenario_sha256': '787176de255fa7dfaab7bbdcd1fc05436b6b1d42311b98c8d0a4fdf6468e0ceb', 'scenario_config_sha256': '9269d93112e04a722e8e6b5ab4c05b34b528529cf047cb939f636712d6e838b1'}","{'access_road_sha256': '2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b', 'outlets_validated_sha256': '04fc53933a80bce09e0d74b4d42d2a1f7cd8b3c7c2122f02e3c34d429a92bca4', 'jeonbuk_route_scenario_sha256': '787176de255fa7dfaab7bbdcd1fc05436b6b1d42311b98c8d0a4fdf6468e0ceb', 'scenario_config_sha256': '9269d93112e04a722e8e6b5ab4c05b34b528529cf047cb939f636712d6e838b1'}"
+scenario_evidence_scope_and_semantics,PASS,"{'analysis_admin_count': 243, 'analysis_service_zone_count': 14, 'route_eligible_admin_target_count': 69}","243 admins, 14 zones, 69 eligible targets; 57 visits, no resident coverage"
+scenario_evidence_stop_cap_dependence,PASS,"[15, 30, 45, 57, 63, 68, 68]",15/30/45/57/63/68/68 visits for stop caps 1..7
+scenario_evidence_speed_service_grid,PASS,"rows=9, visits=[57]",9 combinations; 57 visits under the fixed stop cap
+source_manifest_contract,PASS,"rows=10, unique=10","10 unique sources with URL, retrieval date, terms, and model role"
+source_manifest_expected_sources,PASS,"['cu_jeonbuk_search_20260810', 'ecos_141Y003_202508_202605', 'jeonbuk_senior_centers_20241231', 'kakao_local_geocoding_20260811', 'kfb_jeonbuk_branches_202512', 'kfcc_jeonbuk_20260811', 'koreapost_offices_20250301', 'mois_age_sex_20260630', 'osm_south_korea_20260811', 'sgis_admin_boundaries_20260701']","['cu_jeonbuk_search_20260810', 'ecos_141Y003_202508_202605', 'jeonbuk_senior_centers_20241231', 'kakao_local_geocoding_20260811', 'kfb_jeonbuk_branches_202512', 'kfcc_jeonbuk_20260811', 'koreapost_offices_20250301', 'mois_age_sex_20260630', 'osm_south_korea_20260811', 'sgis_admin_boundaries_20260701']"
+source_manifest_tracked_snapshot_hashes,PASS,[],none
+ecos_public_snapshot_contract,PASS,"rows=10, last={'time': '202605', 'value_billion_krw': '38420.9', 'unit': '십억원', 'stat_code': '141Y003', 'item_code': '200000', 'region_code': 'Q00', 'institution_code': '0950'}",10 official public-sample rows through 202605; context only
+jeongeup_snapshot_counts,PASS,23/19/23,23/19/23
+jeongeup_no_center_or_failed_geocodes,PASS,['정제주소'],address/place only
+jeongeup_post_ids_valid,PASS,19,19
+jeongeup_distances_match_master,PASS,23,23
+jeongeup_population_guard,PASS,False,False

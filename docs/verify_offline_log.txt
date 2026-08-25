@@ -1,0 +1,161 @@
+== 1. Python 문법 ==
+  OK  src/*.py 컴파일
+== 2. 경로 엔진 단위 테스트 ==
+test_transpose_and_reachability_preserve_direction (test_jeonbuk_builder.JeonbukBuilderTests.test_transpose_and_reachability_preserve_direction) ... ok
+test_configure_province_allows_partial_zone_comparison (test_route_scenario.RouteScenarioTests.test_configure_province_allows_partial_zone_comparison) ... ok
+test_configure_province_applies_service_and_time_inputs (test_route_scenario.RouteScenarioTests.test_configure_province_applies_service_and_time_inputs) ... ok
+test_configure_province_service_cycle_override_and_guard (test_route_scenario.RouteScenarioTests.test_configure_province_service_cycle_override_and_guard) ... ok
+test_exact_solver_matches_independent_exhaustive_oracle (test_route_scenario.RouteScenarioTests.test_exact_solver_matches_independent_exhaustive_oracle) ... ok
+test_higher_priority_target_wins_stop_limit (test_route_scenario.RouteScenarioTests.test_higher_priority_target_wins_stop_limit) ... ok
+test_province_allocates_minimum_day_to_each_zone (test_route_scenario.RouteScenarioTests.test_province_allocates_minimum_day_to_each_zone) ... ok
+test_province_rejects_insufficient_zone_capacity (test_route_scenario.RouteScenarioTests.test_province_rejects_insufficient_zone_capacity) ... ok
+test_same_input_is_deterministic (test_route_scenario.RouteScenarioTests.test_same_input_is_deterministic) ... ok
+test_vehicle_count_is_an_input (test_route_scenario.RouteScenarioTests.test_vehicle_count_is_an_input) ... ok
+test_wait_time_is_explicit (test_route_scenario.RouteScenarioTests.test_wait_time_is_explicit) ... ok
+test_returns_none_when_no_candidate_passes_every_gate (test_typology.TypologySelectionTests.test_returns_none_when_no_candidate_passes_every_gate) ... ok
+test_selects_highest_silhouette_without_forcing_three_clusters (test_typology.TypologySelectionTests.test_selects_highest_silhouette_without_forcing_three_clusters) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.003s
+
+OK
+  OK  경로 엔진 테스트
+== 3. 전북 분석·시나리오 산출물 재생성 ==
+typology rows: 243 → data/processed/access_typology.csv
+fit cohort: 155; status: accepted_for_exploratory_typology_not_policy_ranking
+selected k=2; silhouette=0.686; stability median/p10=1.000/0.753
+저장 행렬 재계산: 57개 대표점 대상 방문·15개 경로일
+시나리오 증거: 243개 행정동·7개 임계값·7개 방문상한·9개 속도×서비스 조합
+→ data/processed/scenario_evidence.json, reports/scenario_evidence.md
+전북 대시보드 데이터: 243개 행정동·643개 분석가용 접점·69개 경로대상
+→ docs/demo-jeonbuk/data.js
+✔ dashboard bundle covers all Jeonbuk admins and service zones (2.123334ms)
+✔ map bundle contains real boundaries, roads, and directed route geometry (0.835167ms)
+✔ input controls enforce integer, 15-minute, and 30-minute steps (0.520875ms)
+✔ reachable form error branches: end before start, malformed HH:MM, unknown zone, empty zone list (0.504666ms)
+✔ service cycle control: range check, operating-days cross check, and no effect on coverage (226.392416ms)
+✔ zones with no feasible route in the operating window get zero allocated days (1.957458ms)
+✔ 최소안 browser result matches the Python reference (76.720959ms)
+✔ 기본안 browser result matches the Python reference (103.683875ms)
+✔ 확대안 browser result matches the Python reference (104.689333ms)
+✔ two-zone slice matches the Python reference solver numerically (9.66325ms)
+✔ two-zone slice stays inside those zones and skips 14-zone fairness (112.534625ms)
+✔ one-zone calculate stays inside that zone and skips 14-zone fairness (118.041417ms)
+✔ shorter service time cannot reduce optimized coverage (204.7695ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1093.867542
+  OK  전북 243개 행정동 유형·경로·민감도와 브라우저 엔진
+== 4. 상세 무결성 재계산 ==
+PASS raw_outlet_count: 681
+PASS raw_type_counts: {'우체국': 242, '은행': 175, '신협': 128, '새마을금고': 136}
+PASS raw_outlet_id_unique: 681
+PASS raw_exact_key_unique: 681
+PASS source_snapshot_complete: 681
+PASS source_correction_ledger: 1/1/전북특별자치도 완주군 이서면 안전로 163
+PASS geocode_partition: 681+0
+PASS no_admin_center_fallback: 0
+PASS all_geocodes_inside_admin: 681
+PASS admin_conflicts_flagged: [('NH농협은행 전북혁신도시지점', 'verified_address_boundary_conflict')]
+PASS geocode_id_partition: 681
+PASS validated_outlets_preserve_geocoded: 681
+PASS eligible_outlet_count: 643
+PASS cluster_membership_total: 681
+PASS cluster_id_assigned: 681
+PASS reverse_audit_required_cases: 5
+PASS reverse_audit_addresses_present: 60
+PASS reverse_audit_status_consistent: Counter({'PASS': 59, 'REVIEW': 1})
+PASS admin_access_count: 243
+PASS admin_code_unique: 243
+PASS population_65plus_total: 470160
+PASS population_exposure_guard: 243
+PASS road_row_count: 243
+PASS road_status_explicit: ['fallback_nearest_reachable', 'ok']
+PASS road_all_outlet_algorithm: 1
+PASS road_no_candidate_cutoff: None/None
+PASS road_keeps_components: 0
+PASS road_pbf_md5: 9269d6a6df9c7053fe3aeb31fcf41da2
+PASS road_oneway: True
+PASS road_numeric_coverage: 243
+PASS road_primary_flag: 239
+PASS road_fallback_disclosed: 4
+PASS road_component_sum: []
+PASS road_not_shorter_than_direct: []
+PASS typology_row_count: 243
+PASS typology_code_partition: 243
+PASS typology_input_hash: 2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b
+PASS typology_model_or_fallback_gate: selected=2, clusters=2
+PASS typology_preprocessing_sensitivity: ARI=0.778591, clusters=2
+PASS typology_mixed_distance_features_disclosed: {'road_km': '행정동 대표점에서 최근접 분석가용 금융접점까지 OSM 방향성 도로거리', 'cnt_3km': '행정동 대표점에서 직선거리 3km 이내 분석가용 금융접점 수', 'ratio_65plus': '행정동 주민등록인구 중 65세 이상 비율'}
+PASS typology_fit_scope: 155
+PASS typology_fallback_unassigned: 4
+PASS typology_rule_fallback: rural=159, urban=0
+PASS jeonbuk_venue_source_partition: 6856+24
+PASS jeonbuk_venue_id_unique: 6856
+PASS jeonbuk_venue_province_coverage: cities=14, admins=243, matched=6854
+PASS jeonbuk_venue_operational_guard: 6856
+PASS jeonbuk_venue_privacy_contract: ['addr', 'candidate_lat', 'candidate_lon', 'coord_admin_code', 'coord_dong', 'coord_sigungu', 'data_base_date', 'fail_reason', 'geo_matched', 'geocode_method', 'geocode_query', 'lat', 'lon', 'name', 'source_sigungu', 'source_sigungu_match', 'time_window_status', 'use_approval_status', 'venue_id', 'venue_type']
+PASS route_scenario_input_hashes: {'access_road_sha256': '2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b', 'access_typology_sha256': '9710048eecb3dcea547922db7610b725362920f208be22fd4ae251292647830a', 'venues_jeonbuk_sha256': '9373e79f56ece4a2260bd573738575b9ac3c2cc6327432dcd2ac8ce34f2e74e8', 'outlets_validated_sha256': '04fc53933a80bce09e0d74b4d42d2a1f7cd8b3c7c2122f02e3c34d429a92bca4', 'scenario_config_sha256': '9269d93112e04a722e8e6b5ab4c05b34b528529cf047cb939f636712d6e838b1'}
+PASS route_scenario_matrix_complete: 83
+PASS route_scenario_scope: {'analysis_admin_count': 243, 'analysis_service_zone_count': 14, 'threshold_target_count': 71, 'route_eligible_target_count': 69, 'route_quality_deferred_count': 2, 'candidate_count': 69}
+PASS route_scenario_deterministic_recompute: 57
+PASS route_scenario_priority_improvement: {'P1': 4, 'P2': -4}
+PASS route_scenario_zone_fairness: [('고창군', 1), ('군산시', 1), ('김제시', 1), ('남원시', 1), ('무주군', 1), ('부안군', 1), ('순창군', 1), ('완주군', 2), ('익산시', 1), ('임실군', 1), ('장수군', 1), ('전주시', 1), ('정읍시', 1), ('진안군', 1)]
+PASS route_scenario_attachment_quality: nodes=83, fallbacks=[{'node_id': 'JSC-030DD01E4DBA', 'osm_node_index': 667098, 'connector_km': 0.045744, 'snap_strategy': 'nearest_mutually_reachable_node_fallback'}]
+PASS route_scenario_operational_guard: demonstration_not_operational
+PASS route_scenario_measurement_contract: {'covered_target_count_meaning': 'visited administrative representative-point target count', 'resident_coverage_available': False, 'population_exposure_valid': False, 'candidate_location_optimization_performed': False, 'candidate_count_per_target': 1, 'every_candidate_serves_exactly_one_target': True, 'required_upgrade_for_resident_coverage': 'resident-level or 100m/500m age-grid origins with the same road-access model'}
+PASS route_scenario_temporal_access: {'service_cycle_days': 7, 'operating_days_per_cycle': 5, 'route_day_capacity': 15, 'covered_target_max_wait_days_upper_bound': 7, 'unvisited_targets_have_scheduled_service': False}
+PASS scenario_evidence_input_hashes: {'access_road_sha256': '2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b', 'outlets_validated_sha256': '04fc53933a80bce09e0d74b4d42d2a1f7cd8b3c7c2122f02e3c34d429a92bca4', 'jeonbuk_route_scenario_sha256': '787176de255fa7dfaab7bbdcd1fc05436b6b1d42311b98c8d0a4fdf6468e0ceb', 'scenario_config_sha256': '9269d93112e04a722e8e6b5ab4c05b34b528529cf047cb939f636712d6e838b1'}
+PASS scenario_evidence_scope_and_semantics: {'analysis_admin_count': 243, 'analysis_service_zone_count': 14, 'route_eligible_admin_target_count': 69}
+PASS scenario_evidence_stop_cap_dependence: [15, 30, 45, 57, 63, 68, 68]
+PASS scenario_evidence_speed_service_grid: rows=9, visits=[57]
+PASS source_manifest_contract: rows=10, unique=10
+PASS source_manifest_expected_sources: ['cu_jeonbuk_search_20260810', 'ecos_141Y003_202508_202605', 'jeonbuk_senior_centers_20241231', 'kakao_local_geocoding_20260811', 'kfb_jeonbuk_branches_202512', 'kfcc_jeonbuk_20260811', 'koreapost_offices_20250301', 'mois_age_sex_20260630', 'osm_south_korea_20260811', 'sgis_admin_boundaries_20260701']
+PASS source_manifest_tracked_snapshot_hashes: []
+PASS ecos_public_snapshot_contract: rows=10, last={'time': '202605', 'value_billion_krw': '38420.9', 'unit': '십억원', 'stat_code': '141Y003', 'item_code': '200000', 'region_code': 'Q00', 'institution_code': '0950'}
+PASS jeongeup_snapshot_counts: 23/19/23
+PASS jeongeup_no_center_or_failed_geocodes: ['정제주소']
+PASS jeongeup_post_ids_valid: 19
+PASS jeongeup_distances_match_master: 23
+PASS jeongeup_population_guard: False
+
+71/71 checks PASS → /Users/jaewon/Downloads/금방_전북금융사각지대진단과찾아가는은행최적동선설계_코드분석파일/data/processed/validation_checks.csv
+  OK  상세 검증 재계산
+== 5. 공유 데이터 ==
+  OK  points_raw.csv: 681행
+  OK  points_geocoded.csv: 681행
+  OK  geocode_failed.csv: 0행
+  OK  source_corrections.csv: 1행
+  OK  outlets_validated.csv: 681행
+  OK  coordinate_clusters_5m.csv: 658행
+  OK  access_jeonbuk.csv: 243행
+  OK  access_road.csv: 243행
+  OK  access_typology.csv: 243행
+  OK  ecos_jeonbuk_loans_202508_202605.csv: 10행
+  OK  venues_jeonbuk.csv: 6,856행
+  OK  venues_jeonbuk_geocode_failed.csv: 24행
+  OK  geocode_cache.json: JSON 파싱
+  OK  jeongeup_demo.json: JSON 파싱
+  OK  jeongeup_geom.json: JSON 파싱
+  OK  jeongeup_post.json: JSON 파싱
+  OK  jeongeup_snapshot_metadata.json: JSON 파싱
+  OK  roadnet_metadata.json: JSON 파싱
+  OK  typology_evaluation.json: JSON 파싱
+  OK  venues_jeonbuk_metadata.json: JSON 파싱
+  OK  jeonbuk_route_scenario.json: JSON 파싱
+  OK  scenario_evidence.json: JSON 파싱
+  OK  ecos_jeonbuk_loans_metadata.json: JSON 파싱
+  OK  geocode_reverse_audit.csv: 60행
+  OK  docs/demo-jeonbuk/index.html: 48,059 bytes
+  OK  docs/demo-jeonbuk/methodology.html: 30,413 bytes
+  OK  docs/demo-jeonbuk/app.js: 64,587 bytes
+  OK  docs/demo-jeonbuk/data.js: 277,938 bytes
+  OK  docs/demo-jeonbuk/map-data.js: 2,689,681 bytes
+  OK  docs/demo-jeonbuk/scenario-engine.js: 19,310 bytes
+
+PASS (offline)

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="전북 금융 접근성 분석의 도로거리, 점 크기, AI 유형화, 차량 경로 계산을 고등학생도 이해할 수 있게 설명한 페이지">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<title>3분 만에 이해하는 계산 원리 · 전북 금융 접근성</title>
+<link rel="stylesheet" href="../fonts/pretendard.css">
+<style>
+:root{--navy:#102a43;--blue:#1769aa;--sky:#eaf5fc;--ink:#17212b;--muted:#5b6c7c;--line:#d9e2ea;--bg:#f4f7f9;--card:#fff;--red:#d94b4b;--gold:#d97706;--green:#2d8a68;--violet:#7656a6;--font-sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);line-height:1.72;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}a{color:inherit}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.wrap{width:min(1000px,calc(100% - 32px));margin:auto}.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:36px 0 38px}.back{display:inline-block;margin-bottom:14px;color:#d7ecf8;text-decoration:none;font-size:12px;font-weight:800}.back:hover{text-decoration:underline}.eyebrow{font-size:11px;letter-spacing:.08em;color:#bcd7ea}.hero h1{font-size:clamp(28px,5vw,43px);line-height:1.18;margin:7px 0 12px;letter-spacing:-.035em}.hero p{max-width:760px;margin:0;color:#d7ecf8;font-size:15px}.main{padding:22px 0 54px}.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;position:sticky;top:8px;z-index:5}.nav a{background:rgba(255,255,255,.96);border:1px solid var(--line);padding:10px;border-radius:10px;text-decoration:none;text-align:center;font-size:11.5px;font-weight:800;color:#405465;box-shadow:0 3px 12px rgba(16,42,67,.06)}.nav a:hover,.nav a:focus-visible{border-color:#7fb4d3;background:#f5fbff}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 5px 18px rgba(16,42,67,.04)}h2{font-size:22px;line-height:1.35;margin:0 0 7px;letter-spacing:-.02em}h3{font-size:15px;margin:18px 0 8px}.lead{color:var(--muted);font-size:14px;margin:0 0 16px}.question{display:inline-block;color:#0f5d91;background:#eaf4fb;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:900;margin-bottom:7px}.takeaway{padding:12px 14px;border-left:4px solid var(--blue);background:#eef7fc;border-radius:0 10px 10px 0;font-size:13.5px;margin:14px 0 0}.takeaway b{color:#0f5d91}.story{border:1px solid #e8d6b4;background:#fff8e8;border-radius:11px;padding:13px 15px;font-size:13.5px;margin:12px 0}.story b{color:#8a5200}.figure{margin:16px 0;border:1px solid var(--line);border-radius:14px;background:#fbfdff;padding:14px}.figure svg{display:block;width:100%;height:auto;max-height:300px}.figure figcaption{text-align:center;color:var(--muted);font-size:11.5px;margin-top:9px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid.three{grid-template-columns:repeat(3,1fr)}.mini{border:1px solid var(--line);border-radius:11px;padding:13px;background:#fafcfd;font-size:12.5px}.mini b{display:block;font-size:14px;margin-bottom:4px;color:var(--navy)}.mini .num{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--blue);color:#fff;margin-right:5px}.tag{display:inline-block;border-radius:999px;padding:2px 8px;background:#eaf4fb;color:#0f5d91;font-size:10px;font-weight:900;margin-right:4px}.glossary{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.glossary div{border:1px solid var(--line);background:#fafcfd;border-radius:10px;padding:11px;font-size:11.5px}.glossary b{display:block;color:var(--navy);font-size:13px;margin-bottom:2px}.deep{margin-top:14px;border:1px solid #cfdce6;border-radius:11px;background:#f8fbfd}.deep summary{cursor:pointer;padding:12px 14px;font-size:12.5px;font-weight:900;color:#28475e}.deep summary:hover{background:#eef7fc}.deep-body{padding:0 14px 14px}.formula{background:#102a43;color:#f8fbfd;border-radius:10px;padding:13px 15px;overflow-x:auto;margin:4px 0 12px}.formula code{font-size:12.5px;white-space:nowrap}.formula small{display:block;color:#bdd7e8;margin-top:6px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:620px;font-size:12px}th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}th{background:#eef4f8}.warning{background:#fff3cd;border:1px solid #ead692;color:#604a00;border-radius:10px;padding:12px 14px;font-size:12.5px;margin-top:13px}.ladder{display:grid;gap:7px;counter-reset:objective}.ladder div{counter-increment:objective;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:12.5px;background:#fafcfd}.ladder div::before{content:counter(objective);display:inline-grid;place-items:center;width:23px;height:23px;margin-right:8px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900}.talk{background:linear-gradient(135deg,#102a43,#184f76);color:#fff}.talk h2{color:#fff}.talk blockquote{margin:12px 0 0;padding:16px 18px;border-left:4px solid #81c4e8;background:rgba(255,255,255,.08);border-radius:0 12px 12px 0;font-size:14px}.source{font-size:11.5px;color:var(--muted)}.source a{color:#0f5d91}.footer{text-align:center;color:var(--muted);font-size:11px;padding-top:5px}.svg-label{font-weight:700;font-size:13px;font-family:var(--font-sans);fill:#253746}.svg-small{font-weight:600;font-size:11px;font-family:var(--font-sans);fill:#5b6c7c}.svg-white{font-weight:800;font-size:11px;font-family:var(--font-sans);fill:#fff}@media(max-width:760px){.nav{grid-template-columns:1fr 1fr;position:static}.grid,.grid.three,.glossary{grid-template-columns:1fr}.card{padding:18px}.figure{padding:8px}.hero p{font-size:14px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+:is(h1,h2,h3,.lead,.story,.takeaway,.mini,.glossary div,.talk blockquote,li){word-break:keep-all;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <a class="back" href="index.html">← 대시보드로 돌아가기</a>
+  <div class="eyebrow">3분 만에 이해하는 계산 원리</div>
+  <h1>은행이 먼 곳을 찾고,<br>방문 차량의 길을 짜는 방법</h1>
+  <p>어려운 수학부터 시작하지 않습니다. “왜 이런 계산이 필요한가?”를 그림과 예시로 먼저 이해한 뒤, 궁금할 때만 심화 수식을 펼쳐보세요.</p>
+</div></header>
+<main class="main"><div class="wrap">
+  <nav class="nav" aria-label="계산 이론 목차">
+    <a href="#distance">1. 왜 도로거리?</a><a href="#bubble">2. 점은 어떻게 읽나?</a><a href="#cluster">3. AI는 무엇을 하나?</a><a href="#route">4. 경로는 어떻게 짜나?</a>
+  </nav>
+
+  <section class="card">
+    <span class="question">먼저 이것만 기억하세요</span>
+    <h2>이 프로젝트는 네 가지 질문에 답합니다</h2>
+    <p class="lead">진단, 분류, 운영은 서로 다른 문제입니다. 한 개의 정체불명 “AI 점수”로 섞지 않았습니다.</p>
+    <div class="grid">
+      <div class="mini"><b><span class="num">1</span> 실제 길은 얼마나 먼가?</b>지도 위 직선이 아니라 사람이 이동할 수 있는 도로를 따라 잽니다.</div>
+      <div class="mini"><b><span class="num">2</span> 지도 점은 무엇을 뜻하나?</b>색은 상태, 크기는 고령인구 같은 규모를 보여줍니다.</div>
+      <div class="mini"><b><span class="num">3</span> 비슷한 농촌은 어디인가?</b>AI가 거리·금융접점·고령비율이 비슷한 읍·면을 묶습니다.</div>
+      <div class="mini"><b><span class="num">4</span> 차량은 어디부터 가야 하나?</b>차량 수와 운영시간 안에서 우선지역을 많이 방문할 순서를 찾습니다.</div>
+    </div>
+    <h3>페이지에서 자주 쓰는 말</h3>
+    <div class="glossary">
+      <div><b>대표점</b>행정동 전체를 계산하기 위해 정한 기준 위치</div>
+      <div><b>금융접점</b>은행·농협 등 금융서비스를 받을 수 있다고 확인한 장소</div>
+      <div><b>시나리오</b>차량 수·시간 등을 바꿔보는 하나의 운영 조건</div>
+      <div><b>제약조건</b>차량 수나 퇴근시간처럼 반드시 지켜야 하는 규칙</div>
+    </div>
+  </section>
+
+  <section class="card" id="distance">
+    <span class="question">질문 1 · 가까워 보이는데 정말 가까울까?</span>
+    <h2>직선거리 대신 도로거리를 씁니다</h2>
+    <p class="lead">산, 강, 끊긴 길이 있으면 지도에서는 가까워도 실제 이동은 멀 수 있습니다.</p>
+    <div class="story"><b>학교 가는 길로 생각해보세요.</b> 집과 학교가 운동장 하나만큼 가까워도, 사이에 강이 있다면 다리까지 돌아가야 합니다. 금융접점까지의 거리도 같은 방식으로 계산합니다.</div>
+    <figure class="figure">
+      <svg viewBox="0 0 760 260" role="img" aria-labelledby="distance-title distance-desc">
+        <title id="distance-title">직선거리와 실제 도로거리 비교</title>
+        <desc id="distance-desc">행정동 대표점과 금융접점 사이에 강이 있어 직선보다 다리를 거치는 도로 경로가 더 긴 모습</desc>
+        <rect x="0" y="0" width="760" height="260" rx="14" fill="#f7fbfe"/>
+        <path d="M332 -10 C300 45 380 78 340 130 C300 180 365 210 335 270" fill="none" stroke="#9ed4ee" stroke-width="54"/>
+        <path d="M60 195 C145 165 180 80 275 98 C330 108 355 158 410 154 C515 148 538 72 690 73" fill="none" stroke="#b9c4cb" stroke-width="18" stroke-linecap="round"/>
+        <path d="M60 195 C145 165 180 80 275 98 C330 108 355 158 410 154 C515 148 538 72 690 73" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="13 9"/>
+        <path d="M60 195 L690 73" fill="none" stroke="#d94b4b" stroke-width="3" stroke-dasharray="8 7"/>
+        <circle cx="60" cy="195" r="22" fill="#1769aa"/><text x="60" y="200" text-anchor="middle" class="svg-white">출발</text>
+        <rect x="663" y="46" width="54" height="54" rx="8" fill="#2d8a68"/><text x="690" y="78" text-anchor="middle" class="svg-white">금융</text>
+        <rect x="325" y="131" width="38" height="15" rx="4" fill="#80694a"/>
+        <text x="197" y="184" text-anchor="middle" class="svg-small">직선 2.1km · 건널 수 없음</text>
+        <text x="492" y="128" text-anchor="middle" class="svg-label">도로 4.8km</text>
+        <text x="344" y="121" text-anchor="middle" class="svg-small">다리</text>
+      </svg>
+      <figcaption>빨간 점선은 눈에 보이는 직선, 회색선은 실제로 이동할 수 있는 도로의 예입니다.</figcaption>
+    </figure>
+    <div class="grid three">
+      <div class="mini"><b>① 출발점을 도로에 연결</b>행정동 대표점에서 가장 가까운 도로로 들어갑니다.</div>
+      <div class="mini"><b>② 도로를 따라 탐색</b>일방통행까지 지키며 가장 짧은 길을 찾습니다.</div>
+      <div class="mini"><b>③ 가장 가까운 접점 선택</b>여러 금융접점 중 도로거리로 가장 가까운 곳을 고릅니다.</div>
+    </div>
+    <div class="takeaway"><b>한 줄 결론:</b> “지도상 가까움”이 아니라 “실제로 갈 수 있는 길의 가까움”을 비교합니다.</div>
+    <details class="deep">
+      <summary>수식과 P1·P2 기준이 궁금하면 펼쳐보기</summary>
+      <div class="deep-body">
+        <p class="lead">컴퓨터는 출발 연결구간, 도로 위 최단거리, 도착 연결구간을 모두 더합니다.</p>
+        <div class="formula"><code>dᵢ = minⱼ { 출발 연결 + 최단도로거리(i, j) + 도착 연결 }</code><small>i는 행정동 대표점, j는 운영상태와 좌표 품질을 통과한 금융접점입니다.</small></div>
+        <div class="grid">
+          <div class="mini"><b>P1 · 5km 초과</b>차량 방문 수를 가장 먼저 늘리는 프로젝트 운영 우선대상입니다.</div>
+          <div class="mini"><b>P2 · 3~5km</b>P1 다음으로 방문 수를 늘립니다. 3km와 5km는 법정 기준이 아닙니다.</div>
+        </div>
+      </div>
+    </details>
+    <div class="warning">주의: 대표점 한 곳의 거리는 주민 한 명 한 명의 실제 이동거리가 아닙니다. “그 지역 주민 모두가 5km 이상 이동한다”는 뜻은 아닙니다.</div>
+  </section>
+
+  <section class="card" id="bubble">
+    <span class="question">질문 2 · 지도 위 원은 어떻게 읽을까?</span>
+    <h2>색은 상태, 크기는 규모를 뜻합니다</h2>
+    <p class="lead">두 정보를 한 원에 겹쳐 보여주면 “어디가 취약한지”와 “영향받을 사람이 얼마나 많은지”를 함께 볼 수 있습니다.</p>
+    <figure class="figure">
+      <svg viewBox="0 0 760 250" role="img" aria-labelledby="bubble-title bubble-desc">
+        <title id="bubble-title">지도 점의 색과 크기 읽는 법</title>
+        <desc id="bubble-desc">같은 빨간색이지만 크기가 다른 원과, 크기는 같지만 색이 다른 원을 비교하는 그림</desc>
+        <rect width="760" height="250" rx="14" fill="#f7fbfe"/>
+        <text x="185" y="36" text-anchor="middle" class="svg-label">같은 색, 다른 크기</text>
+        <circle cx="85" cy="137" r="26" fill="#d94b4b" opacity=".88"/><circle cx="180" cy="137" r="43" fill="#d94b4b" opacity=".88"/><circle cx="303" cy="137" r="61" fill="#d94b4b" opacity=".88"/>
+        <text x="85" y="220" text-anchor="middle" class="svg-small">고령인구 적음</text><text x="303" y="220" text-anchor="middle" class="svg-small">고령인구 많음</text>
+        <line x1="380" y1="28" x2="380" y2="224" stroke="#d9e2ea" stroke-width="2"/>
+        <text x="570" y="36" text-anchor="middle" class="svg-label">같은 크기, 다른 색</text>
+        <circle cx="466" cy="136" r="43" fill="#d94b4b" opacity=".88"/><circle cx="570" cy="136" r="43" fill="#d97706" opacity=".88"/><circle cx="674" cy="136" r="43" fill="#2d8a68" opacity=".88"/>
+        <text x="466" y="205" text-anchor="middle" class="svg-small">P1</text><text x="570" y="205" text-anchor="middle" class="svg-small">P2</text><text x="674" y="205" text-anchor="middle" class="svg-small">접근 가능</text>
+      </svg>
+      <figcaption>기본 설정에서는 빨간색에 가까울수록 도로거리 우선순위가 높고, 원이 클수록 65세 이상 인구가 많습니다.</figcaption>
+    </figure>
+    <div class="grid">
+      <div class="mini"><b><span class="tag">색</span> 어떤 상태인가?</b>P1·P2·접근 가능·품질 유보, 또는 취약유형을 구분합니다.</div>
+      <div class="mini"><b><span class="tag">크기</span> 수치가 얼마나 큰가?</b>65세 이상 인구, 고령비율, 도로거리 중 하나를 선택해 비교합니다.</div>
+    </div>
+    <div class="story"><b>읽는 예:</b> 큰 빨간 점은 “금융접점까지 5km가 넘고, 65세 이상 인구 규모도 큰 행정동”입니다. 빨간색 자체가 인구수를 뜻하는 것은 아닙니다.</div>
+    <div class="takeaway"><b>한 줄 결론:</b> 원을 볼 때는 “무슨 색인가?”와 “얼마나 큰가?”를 따로 읽습니다.</div>
+    <details class="deep">
+      <summary>왜 반지름이 아니라 원의 넓이로 계산하는지 펼쳐보기</summary>
+      <div class="deep-body">
+        <p class="lead">사람의 눈은 원의 반지름보다 넓이를 크게 느낍니다. 값이 2배일 때 넓이가 약 2배가 되도록 제곱근을 사용합니다.</p>
+        <div class="formula"><code>반지름 = √{ 최소반지름² + 정규화값 × (최대반지름² − 최소반지름²) }</code><small>이렇게 하면 큰 값이 화면을 지나치게 덮는 현상도 줄일 수 있습니다.</small></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="card" id="cluster">
+    <span class="question">질문 3 · AI는 챗봇 대신 무슨 일을 할까?</span>
+    <h2>조건이 비슷한 농촌 지역을 두 유형으로 묶습니다</h2>
+    <p class="lead">AI에게 답변 문장을 쓰게 하는 대신, 사람이 한눈에 찾기 어려운 “비슷한 지역 묶음”을 데이터로 찾게 했습니다.</p>
+    <div class="story"><b>반 친구를 모둠으로 나누는 상황을 떠올려보세요.</b> 통학시간, 관심 과목, 가능한 활동시간이 비슷한 학생끼리 모으면 함께 계획하기 쉽습니다. 여기서는 지역의 도로거리, 주변 금융접점 수, 고령비율을 비교합니다.</div>
+    <figure class="figure">
+      <svg viewBox="0 0 760 300" role="img" aria-labelledby="cluster-title cluster-desc">
+        <title id="cluster-title">비슷한 특성의 지역을 묶는 군집화</title>
+        <desc id="cluster-desc">흩어진 점들이 접점중심형과 장거리 접점희소형 두 묶음으로 나뉜 그림</desc>
+        <rect width="760" height="300" rx="14" fill="#f7fbfe"/>
+        <line x1="70" y1="245" x2="710" y2="245" stroke="#9aa9b5" stroke-width="2"/><line x1="70" y1="245" x2="70" y2="45" stroke="#9aa9b5" stroke-width="2"/>
+        <text x="390" y="280" text-anchor="middle" class="svg-small">금융접점까지의 도로거리 →</text><text x="20" y="150" text-anchor="middle" class="svg-small" transform="rotate(-90 20 150)">65세 이상 비율 →</text>
+        <ellipse cx="210" cy="190" rx="112" ry="52" fill="#2d8a68" opacity=".1" stroke="#2d8a68" stroke-width="2"/><ellipse cx="555" cy="145" rx="145" ry="90" fill="#d94b4b" opacity=".1" stroke="#d94b4b" stroke-width="2"/>
+        <g fill="#2d8a68"><circle cx="145" cy="205" r="8"/><circle cx="188" cy="170" r="8"/><circle cx="225" cy="207" r="8"/><circle cx="267" cy="177" r="8"/></g>
+        <g fill="#d94b4b"><circle cx="475" cy="190" r="8"/><circle cx="525" cy="120" r="8"/><circle cx="575" cy="190" r="8"/><circle cx="625" cy="105" r="8"/><circle cx="660" cy="165" r="8"/></g>
+        <text x="210" y="145" text-anchor="middle" class="svg-label">접점중심형</text><text x="555" y="38" text-anchor="middle" class="svg-label">장거리·접점희소형</text>
+      </svg>
+      <figcaption>그림은 원리를 보여주는 예시입니다. 실제 분류는 세 가지 수치를 함께 사용합니다.</figcaption>
+    </figure>
+    <h3>AI가 비교하는 세 가지</h3>
+    <div class="grid three">
+      <div class="mini"><b>도로거리</b>가장 가까운 금융접점까지 실제 길이 얼마나 먼가?</div>
+      <div class="mini"><b>3km 안 접점 수</b>가까운 선택지가 하나뿐인지, 여러 곳인지?</div>
+      <div class="mini"><b>65세 이상 비율</b>이동에 더 큰 어려움을 겪을 가능성이 있는 인구 비율은?</div>
+    </div>
+    <div class="takeaway"><b>왜 243개를 모두 묶지 않나요?</b> 전북 243개 행정동 중 도시 동과 농촌 읍·면은 생활환경이 크게 다릅니다. 그래서 비교 가능한 농촌 읍·면 가운데 도로거리 품질을 통과한 155개만 AI 분류에 넣고, 나머지는 비교대상 또는 품질 유보로 남깁니다.</div>
+    <h3>찾아낸 두 유형</h3>
+    <div class="grid">
+      <div class="mini"><b>농촌 접점중심형</b>금융접점이 상대적으로 가깝고 주변 선택지도 많은 유형</div>
+      <div class="mini"><b>장거리·접점희소형</b>도로거리가 길고 3km 안 금융접점도 드문 유형</div>
+    </div>
+    <div class="takeaway"><b>한 줄 결론:</b> AI가 “공식 취약등급”을 매기는 것이 아니라, 운영방법을 함께 고민할 만한 비슷한 농촌을 찾아줍니다.</div>
+    <details class="deep">
+      <summary>Ward 군집·표준화·안정성 검증을 쉽게 풀어보기</summary>
+      <div class="deep-body">
+        <h3>1. 단위를 공평하게 맞춥니다</h3>
+        <p class="lead">km, 개수, %는 단위가 다릅니다. 그대로 비교하면 숫자 범위가 큰 항목이 결과를 지배하므로, 중앙값에서 얼마나 떨어졌는지로 바꿉니다.</p>
+        <div class="formula"><code>표준화값 = (원래 값 − 중앙값) ÷ 사분위범위(IQR)</code><small>쉽게 말해 서로 다른 단위의 세 자를 같은 눈금으로 바꾸는 과정입니다.</small></div>
+        <h3>2. 가장 비슷한 묶음을 차례로 합칩니다</h3>
+        <p class="lead">Ward 계층군집은 처음에 각 지역을 따로 놓고, 묶었을 때 차이가 가장 적게 늘어나는 두 그룹을 반복해서 합칩니다.</p>
+        <h3>3. 우연히 나온 결과인지 다시 흔들어봅니다</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>검사</th><th>고등학생식 설명</th><th>이번 결과</th></tr></thead>
+          <tbody>
+            <tr><td>실루엣</td><td>같은 모둠끼리는 가깝고 다른 모둠과는 잘 떨어졌는가?</td><td>k=2에서 0.686</td></tr>
+            <tr><td>ARI 안정성</td><td>자료 20%를 무작위로 빼도 전체 모둠 구조가 비슷한가?</td><td>중앙값 1.000</td></tr>
+            <tr><td>군집별 Jaccard</td><td>전체가 아니라 작은 모둠 하나만 유난히 흔들리지는 않는가?</td><td>재표집 중앙값 최솟값 1.000</td></tr>
+            <tr><td>전처리 민감도</td><td>큰 거리·개수를 로그로 압축해도 비슷한가?</td><td>ARI 0.779, 군집별 Jaccard 0.706 이상</td></tr>
+            <tr><td>규칙형 안전장치</td><td>AI 결과가 흔들려도 원래 수치로 다시 설명할 수 있는가?</td><td>3km·농촌 고령비율 중앙값 병행</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+    <div class="warning">군집명은 AI가 만든 공식 등급이 아닙니다. 각 묶음의 중앙값을 사람이 해석해 붙인 설명명이며, 반드시 원자료와 함께 확인합니다.</div>
+  </section>
+
+  <section class="card" id="route">
+    <span class="question">질문 4 · 방문 차량은 어떤 순서로 움직일까?</span>
+    <h2>현장학습 시간표를 짜듯 경로를 만듭니다</h2>
+    <p class="lead">버스 수, 출발시간, 장소별 체류시간, 복귀시간을 지키면서 우선지역을 최대한 많이 방문합니다.</p>
+    <div class="story"><b>수학여행 버스 계획과 같습니다.</b> 오전 9시에 출발해 박물관마다 45분 머물고 오후 5시 전에 돌아와야 한다면, 단순히 가까운 곳만 고를 수 없습니다. 이동시간과 머무는 시간을 모두 더해야 합니다.</div>
+    <figure class="figure">
+      <svg viewBox="0 0 760 265" role="img" aria-labelledby="route-title route-desc">
+        <title id="route-title">하루 차량 경로와 시간표</title>
+        <desc id="route-desc">출발지에서 세 방문지를 거쳐 복귀하는 경로와 이동 및 서비스 시간이 이어지는 그림</desc>
+        <rect width="760" height="265" rx="14" fill="#f7fbfe"/>
+        <path d="M80 80 C180 28 255 135 360 75 S555 122 680 70" fill="none" stroke="#1769aa" stroke-width="6" stroke-linecap="round"/>
+        <rect x="55" y="57" width="50" height="50" rx="8" fill="#102a43"/><text x="80" y="87" text-anchor="middle" class="svg-white">차고지</text>
+        <circle cx="250" cy="99" r="25" fill="#d94b4b"/><text x="250" y="104" text-anchor="middle" class="svg-white">1</text>
+        <circle cx="460" cy="91" r="25" fill="#d97706"/><text x="460" y="96" text-anchor="middle" class="svg-white">2</text>
+        <circle cx="610" cy="92" r="25" fill="#2d8a68"/><text x="610" y="97" text-anchor="middle" class="svg-white">3</text>
+        <path d="M610 92 C675 135 675 195 595 205 C415 225 225 220 80 107" fill="none" stroke="#1769aa" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 8"/>
+        <text x="80" y="42" text-anchor="middle" class="svg-label">09:00 출발</text><text x="250" y="140" text-anchor="middle" class="svg-small">45분 서비스</text><text x="460" y="132" text-anchor="middle" class="svg-small">45분 서비스</text><text x="610" y="133" text-anchor="middle" class="svg-small">45분 서비스</text><text x="390" y="246" text-anchor="middle" class="svg-label">이동 + 대기 + 서비스 후 17:00 전 복귀</text>
+      </svg>
+      <figcaption>방문지 사이의 이동뿐 아니라 각 장소에서 서비스를 제공하는 시간과 마지막 복귀시간도 계산합니다.</figcaption>
+    </figure>
+    <h3>사용자가 바꿀 수 있는 운영조건</h3>
+    <div class="grid">
+      <div class="mini"><b>차량 대수·운영일</b>차량은 1대 단위, 운영일은 하루 단위로 입력합니다.</div>
+      <div class="mini"><b>출발·복귀 위치</b>시·군별 후보거점 중 실제 운용할 곳을 선택합니다.</div>
+      <div class="mini"><b>운영시간</b>출발과 종료는 30분 단위로 바꿉니다.</div>
+      <div class="mini"><b>장소당 서비스시간</b>15분 단위로 머무는 시간을 정합니다.</div>
+    </div>
+    <h3>컴퓨터가 지키는 우선순위</h3>
+    <div class="ladder">
+      <div>P1 지역 방문 수를 가장 먼저 늘림</div><div>P2 지역 방문 수를 다음으로 늘림</div><div>전체 방문 수를 늘림</div><div>방문 수가 같다면 이동·대기시간을 줄임</div><div>특정 하루만 지나치게 길어지지 않게 함</div>
+    </div>
+    <div class="takeaway"><b>한 줄 결론:</b> 가장 짧은 길만 찾는 것이 아니라, 정해진 시간 안에 우선지역을 많이 방문하는 “실행 가능한 시간표”를 찾습니다.</div>
+    <details class="deep">
+      <summary>이동시간 수식과 ‘사전식 최적화’를 펼쳐보기</summary>
+      <div class="deep-body">
+        <div class="formula"><code>이동시간(분) = 도로거리(km) ÷ 40(km/h) × 60</code><small>현재는 모든 도로에서 평균 40km/h라고 가정한 시연값이며 실제 교통시간은 아닙니다.</small></div>
+        <div class="formula"><code>서비스 시작 = max(도착시각, 장소 시작시간)<br>서비스 종료 = 서비스 시작 + 장소당 서비스시간</code><small>서비스 뒤 차고지 복귀시간까지 더해 운영 종료시각을 넘으면 선택할 수 없습니다.</small></div>
+        <p class="lead"><b>사전식 최적화</b>는 국어사전에서 단어를 찾듯 1순위를 먼저 비교하고, 1순위가 같을 때만 2순위를 비교하는 방법입니다. 그래서 P1 한 곳을 포기하고 이동거리 몇 km만 줄이는 숨은 맞교환이 생기지 않습니다.</p>
+        <div class="formula"><code>전체 경로일 용량 = 차량 대수 × 주간 운영일</code><small>용량이 14 이상이면 14개 시·군에 최소 1경로일을 먼저 배정한 뒤 남은 용량을 배분합니다.</small></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="card">
+    <span class="question">지도 위 선과 점도 읽어봅시다</span>
+    <h2>경로선은 실제 도로 모양을 따라갑니다</h2>
+    <p class="lead">방문지끼리 직선으로 이은 장식이 아니라, 계산에 사용한 OSM 도로 경로를 단순화해 그렸습니다.</p>
+    <figure class="figure">
+      <svg viewBox="0 0 760 245" role="img" aria-labelledby="map-title map-desc">
+        <title id="map-title">지도 경로선과 도로노드 범례</title>
+        <desc id="map-desc">회색 도로 위에 파란 차량 경로, 출발지 사각형, 방문지 원, 작은 도로 노드가 표시된 그림</desc>
+        <rect width="760" height="245" rx="14" fill="#f1f5f7"/>
+        <g fill="none" stroke="#c1cad0" stroke-width="8" stroke-linecap="round"><path d="M30 180 C165 190 215 95 340 117 S545 198 730 86"/><path d="M75 45 C190 130 270 45 390 72 S570 135 705 40"/><path d="M160 20 C210 90 155 160 230 230"/></g>
+        <path d="M80 172 C165 178 225 95 340 117 S545 198 675 120" fill="none" stroke="#1769aa" stroke-width="7" stroke-linecap="round"/>
+        <g fill="#647885"><circle cx="132" cy="169" r="4"/><circle cx="200" cy="128" r="4"/><circle cx="275" cy="103" r="4"/><circle cx="405" cy="135" r="4"/><circle cx="505" cy="177" r="4"/><circle cx="595" cy="163" r="4"/></g>
+        <rect x="57" y="149" width="46" height="46" rx="7" fill="#102a43"/><text x="80" y="177" text-anchor="middle" class="svg-white">출발</text>
+        <g fill="#fff" stroke="#1769aa" stroke-width="4"><circle cx="340" cy="117" r="20"/><circle cx="505" cy="177" r="20"/><circle cx="675" cy="120" r="20"/></g>
+        <g class="svg-label"><text x="340" y="122" text-anchor="middle">1</text><text x="505" y="182" text-anchor="middle">2</text><text x="675" y="125" text-anchor="middle">3</text></g>
+      </svg>
+      <figcaption>회색은 주요도로, 파랑은 차량 경로, 작은 회색 점은 경로에 실제 사용된 도로노드의 표본입니다.</figcaption>
+    </figure>
+    <div class="grid">
+      <div class="mini"><b>주요도로 회색선</b>motorway·trunk·primary·secondary 등급의 OSM 도로입니다.</div>
+      <div class="mini"><b>차량 색상 경로</b>출발 → 방문 후보 → 복귀 순서의 실제 도로 형상입니다.</div>
+      <div class="mini"><b>작은 회색 노드</b>현재 경로를 만든 도로 좌표를 구간당 최대 64개 보여줍니다.</div>
+      <div class="mini"><b>사각형·흰 원</b>사각형은 출발·복귀 후보, 흰 원은 방문 후보입니다.</div>
+    </div>
+    <div class="warning">전체 활성 도로노드 약 184만 개를 모두 표시하면 지도가 느려지고 읽기 어려워집니다. 그래서 선택된 경로에 사용된 노드만 표본으로 보여줍니다.</div>
+  </section>
+
+  <p class="source">재현 근거: <a href="../SCENARIO_CONTRACT.md">시나리오 계약</a> · <a href="../../reports/typology_evaluation.md">군집 평가 보고서</a> · <a href="../../DATASETS.md">데이터셋 문서</a> · 도로/경로 © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a></p>
+  <div class="footer"><a href="index.html">대시보드로 돌아가기</a> · 분석 기준일 2026-08-12</div>
+</div></main>
+</body>
+</html>

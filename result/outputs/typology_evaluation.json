@@ -1,0 +1,419 @@
+{
+  "analysis_version": 2,
+  "input_file": "data/processed/access_road.csv",
+  "input_sha256": "2091a421f250c6f5c8326ccd04fd889dd848c024348959a2991faf1f58fd2b9b",
+  "input_row_count": 243,
+  "fit_scope": "읍/면 and road_distance_primary=Y",
+  "fit_row_count": 155,
+  "excluded": {
+    "outside_rural_peer_cohort": 84,
+    "route_quality": 4
+  },
+  "features": [
+    "road_km",
+    "cnt_3km",
+    "ratio_65plus"
+  ],
+  "feature_definitions": {
+    "road_km": "행정동 대표점에서 최근접 분석가용 금융접점까지 OSM 방향성 도로거리",
+    "cnt_3km": "행정동 대표점에서 직선거리 3km 이내 분석가용 금융접점 수",
+    "ratio_65plus": "행정동 주민등록인구 중 65세 이상 비율"
+  },
+  "preprocessing": {
+    "transformations": {
+      "road_km": "identity",
+      "cnt_3km": "identity",
+      "ratio_65plus": "identity"
+    },
+    "primary_rationale": "preserve linear policy meaning of kilometres, outlet counts, and percentage points",
+    "scaling": "median/IQR robust scaling",
+    "transformed_medians": {
+      "road_km": 2.487,
+      "cnt_3km": 1.0,
+      "ratio_65plus": 50.1
+    },
+    "transformed_iqr": {
+      "road_km": 2.1085000000000003,
+      "cnt_3km": 1.0,
+      "ratio_65plus": 7.450000000000003
+    }
+  },
+  "method": "Ward hierarchical agglomerative clustering",
+  "candidate_k": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "selection_rule": "highest silhouette among candidates passing every project gate; lower k breaks exact ties",
+  "rule_based_fallback": {
+    "scope": "읍/면",
+    "distance_threshold_km": 3.0,
+    "age_threshold_pct": 50.1,
+    "types": [
+      "장거리·고령집중형",
+      "장거리형",
+      "고령집중형",
+      "상대적 접근양호형"
+    ]
+  },
+  "project_gates": {
+    "silhouette_min": 0.35,
+    "stability_median_ari_min": 0.75,
+    "stability_p10_ari_min": 0.5,
+    "cluster_jaccard_min_median_min": 0.75,
+    "min_cluster_share": 0.05,
+    "preprocessing_ari_min": 0.75,
+    "preprocessing_cluster_jaccard_min": 0.7
+  },
+  "stability": {
+    "metric": "adjusted Rand index against full-fit labels on 80% subsamples",
+    "cluster_metric": "best-match cluster-wise Jaccard on the same subsamples",
+    "rounds": 100,
+    "seed": 20260812
+  },
+  "candidate_models": [
+    {
+      "k": 2,
+      "observed_cluster_count": 2,
+      "silhouette": 0.685726,
+      "stability_median_ari": 1.0,
+      "stability_p10_ari": 0.752875,
+      "cluster_sizes": [
+        12,
+        143
+      ],
+      "cluster_jaccard": [
+        {
+          "cluster_id": 1,
+          "median": 1.0,
+          "p10": 0.6875
+        },
+        {
+          "cluster_id": 2,
+          "median": 1.0,
+          "p10": 0.956897
+        }
+      ],
+      "cluster_jaccard_min_median": 1.0,
+      "min_cluster_required": 8,
+      "preprocessing_sensitivity": {
+        "status": "adoption_gate",
+        "alternative": "log1p(road_km, cnt_3km) then median/IQR scaling",
+        "adjusted_rand_index": 0.778591,
+        "cluster_matches": [
+          {
+            "reference_cluster_id": 1,
+            "best_alternative_cluster_id": 1,
+            "jaccard": 0.705882
+          },
+          {
+            "reference_cluster_id": 2,
+            "best_alternative_cluster_id": 2,
+            "jaccard": 0.965035
+          }
+        ]
+      },
+      "passes_project_gates": true
+    },
+    {
+      "k": 3,
+      "observed_cluster_count": 3,
+      "silhouette": 0.440674,
+      "stability_median_ari": 0.91308,
+      "stability_p10_ari": 0.794029,
+      "cluster_sizes": [
+        12,
+        31,
+        112
+      ],
+      "cluster_jaccard": [
+        {
+          "cluster_id": 1,
+          "median": 1.0,
+          "p10": 0.744231
+        },
+        {
+          "cluster_id": 2,
+          "median": 0.925926,
+          "p10": 0.832143
+        },
+        {
+          "cluster_id": 3,
+          "median": 0.967742,
+          "p10": 0.91189
+        }
+      ],
+      "cluster_jaccard_min_median": 0.925926,
+      "min_cluster_required": 8,
+      "preprocessing_sensitivity": {
+        "status": "adoption_gate",
+        "alternative": "log1p(road_km, cnt_3km) then median/IQR scaling",
+        "adjusted_rand_index": 0.620632,
+        "cluster_matches": [
+          {
+            "reference_cluster_id": 1,
+            "best_alternative_cluster_id": 1,
+            "jaccard": 0.705882
+          },
+          {
+            "reference_cluster_id": 2,
+            "best_alternative_cluster_id": 2,
+            "jaccard": 0.617647
+          },
+          {
+            "reference_cluster_id": 3,
+            "best_alternative_cluster_id": 3,
+            "jaccard": 0.852459
+          }
+        ]
+      },
+      "passes_project_gates": false
+    },
+    {
+      "k": 4,
+      "observed_cluster_count": 4,
+      "silhouette": 0.313858,
+      "stability_median_ari": 0.57386,
+      "stability_p10_ari": 0.436293,
+      "cluster_sizes": [
+        12,
+        30,
+        31,
+        82
+      ],
+      "cluster_jaccard": [
+        {
+          "cluster_id": 1,
+          "median": 1.0,
+          "p10": 0.688333
+        },
+        {
+          "cluster_id": 2,
+          "median": 0.923077,
+          "p10": 0.740196
+        },
+        {
+          "cluster_id": 3,
+          "median": 0.267054,
+          "p10": 0.214977
+        },
+        {
+          "cluster_id": 4,
+          "median": 0.725705,
+          "p10": 0.642308
+        }
+      ],
+      "cluster_jaccard_min_median": 0.267054,
+      "min_cluster_required": 8,
+      "preprocessing_sensitivity": {
+        "status": "adoption_gate",
+        "alternative": "log1p(road_km, cnt_3km) then median/IQR scaling",
+        "adjusted_rand_index": 0.395002,
+        "cluster_matches": [
+          {
+            "reference_cluster_id": 1,
+            "best_alternative_cluster_id": 1,
+            "jaccard": 0.705882
+          },
+          {
+            "reference_cluster_id": 2,
+            "best_alternative_cluster_id": 2,
+            "jaccard": 0.617647
+          },
+          {
+            "reference_cluster_id": 3,
+            "best_alternative_cluster_id": 3,
+            "jaccard": 0.481481
+          },
+          {
+            "reference_cluster_id": 4,
+            "best_alternative_cluster_id": 4,
+            "jaccard": 0.586957
+          }
+        ]
+      },
+      "passes_project_gates": false
+    },
+    {
+      "k": 5,
+      "observed_cluster_count": 5,
+      "silhouette": 0.313432,
+      "stability_median_ari": 0.601715,
+      "stability_p10_ari": 0.335575,
+      "cluster_sizes": [
+        12,
+        30,
+        31,
+        31,
+        51
+      ],
+      "cluster_jaccard": [
+        {
+          "cluster_id": 1,
+          "median": 0.875,
+          "p10": 0.579545
+        },
+        {
+          "cluster_id": 2,
+          "median": 0.864368,
+          "p10": 0.74
+        },
+        {
+          "cluster_id": 3,
+          "median": 0.347703,
+          "p10": 0.222222
+        },
+        {
+          "cluster_id": 4,
+          "median": 0.612422,
+          "p10": 0.477165
+        },
+        {
+          "cluster_id": 5,
+          "median": 0.382251,
+          "p10": 0.238368
+        }
+      ],
+      "cluster_jaccard_min_median": 0.347703,
+      "min_cluster_required": 8,
+      "preprocessing_sensitivity": {
+        "status": "adoption_gate",
+        "alternative": "log1p(road_km, cnt_3km) then median/IQR scaling",
+        "adjusted_rand_index": 0.332712,
+        "cluster_matches": [
+          {
+            "reference_cluster_id": 1,
+            "best_alternative_cluster_id": 1,
+            "jaccard": 0.705882
+          },
+          {
+            "reference_cluster_id": 2,
+            "best_alternative_cluster_id": 2,
+            "jaccard": 0.617647
+          },
+          {
+            "reference_cluster_id": 3,
+            "best_alternative_cluster_id": 3,
+            "jaccard": 0.481481
+          },
+          {
+            "reference_cluster_id": 4,
+            "best_alternative_cluster_id": 5,
+            "jaccard": 0.418919
+          },
+          {
+            "reference_cluster_id": 5,
+            "best_alternative_cluster_id": 4,
+            "jaccard": 0.322581
+          }
+        ]
+      },
+      "passes_project_gates": false
+    }
+  ],
+  "selected_model": {
+    "k": 2,
+    "observed_cluster_count": 2,
+    "silhouette": 0.685726,
+    "stability_median_ari": 1.0,
+    "stability_p10_ari": 0.752875,
+    "cluster_sizes": [
+      12,
+      143
+    ],
+    "cluster_jaccard": [
+      {
+        "cluster_id": 1,
+        "median": 1.0,
+        "p10": 0.6875
+      },
+      {
+        "cluster_id": 2,
+        "median": 1.0,
+        "p10": 0.956897
+      }
+    ],
+    "cluster_jaccard_min_median": 1.0,
+    "min_cluster_required": 8,
+    "preprocessing_sensitivity": {
+      "status": "adoption_gate",
+      "alternative": "log1p(road_km, cnt_3km) then median/IQR scaling",
+      "adjusted_rand_index": 0.778591,
+      "cluster_matches": [
+        {
+          "reference_cluster_id": 1,
+          "best_alternative_cluster_id": 1,
+          "jaccard": 0.705882
+        },
+        {
+          "reference_cluster_id": 2,
+          "best_alternative_cluster_id": 2,
+          "jaccard": 0.965035
+        }
+      ]
+    },
+    "passes_project_gates": true
+  },
+  "preprocessing_sensitivity": {
+    "status": "adoption_gate",
+    "alternative": "log1p(road_km, cnt_3km) then median/IQR scaling",
+    "adjusted_rand_index": 0.778591,
+    "cluster_matches": [
+      {
+        "reference_cluster_id": 1,
+        "best_alternative_cluster_id": 1,
+        "jaccard": 0.705882
+      },
+      {
+        "reference_cluster_id": 2,
+        "best_alternative_cluster_id": 2,
+        "jaccard": 0.965035
+      }
+    ]
+  },
+  "model_status": "accepted_for_exploratory_typology_not_policy_ranking",
+  "cluster_profiles": [
+    {
+      "cluster_id": 1,
+      "cluster_label": "농촌 접점중심형",
+      "count": 12,
+      "medians": {
+        "road_km": 1.9195,
+        "cnt_3km": 6.0,
+        "ratio_65plus": 27.45
+      },
+      "representative": {
+        "code": "5277025000",
+        "sigungu": "순창군",
+        "dong": "순창읍"
+      }
+    },
+    {
+      "cluster_id": 2,
+      "cluster_label": "장거리·접점희소형",
+      "count": 143,
+      "medians": {
+        "road_km": 2.55,
+        "cnt_3km": 1.0,
+        "ratio_65plus": 50.3
+      },
+      "representative": {
+        "code": "5279031000",
+        "sigungu": "고창군",
+        "dong": "고수면"
+      }
+    }
+  ],
+  "output_status_counts": {
+    "outside_rural_peer_cohort": 84,
+    "assigned_exploratory": 155,
+    "excluded_route_quality": 4
+  },
+  "limitations": [
+    "administrative representative-point proxy, not resident-level exposure",
+    "rural peer cohort only; urban dongs are outside the model",
+    "road-distance fallback rows are unassigned",
+    "cluster names are post-hoc descriptive labels"
+  ]
+}
